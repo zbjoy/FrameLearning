@@ -3,49 +3,52 @@
 
 using namespace std;
 
-class TestOut : public Ichannel
-{
+class TestOut : public Ichannel {
 public:
 	// 通过 Ichannel 继承
 	bool Init() override
 	{
 		return true;
 	}
+
 	bool ReadFd(std::string& _input) override
 	{
 		return false;
 	}
+
 	bool WriteFd(std::string& _output) override
 	{
 		cout << _output << endl;
 		return true;
 	}
+
 	void Fini() override
 	{
 	}
+
 	int GetFd() override
 	{
 		return STDOUT_FILENO;
 	}
+
 	std::string GetChannelInfo() override
 	{
 		return "TestOut";
 	}
+
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
 		return nullptr;
 	}
+
 } *poOut = new TestOut();
 
-
-class Echo : public AZinxHandler
-{
+class Echo : public AZinxHandler {
 public:
 	// 通过 AZinxHandler 继承
 	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
 	{
 		GET_REF2DATA(BytesMsg, oBytes, _oInput);
-		//cout << oBytes.szData;
 		ZinxKernel::Zinx_SendOut(oBytes.szData, *poOut);
 		return nullptr;
 	}
@@ -54,31 +57,9 @@ public:
 	{
 		return nullptr;
 	}
-
 } *poEcho = new Echo();
 
-class ExitFramework : public AZinxHandler
-{
-public:
-	// 通过 AZinxHandler 继承
-	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
-	{
-		GET_REF2DATA(BytesMsg, oBytes, _oInput);
-		if (oBytes.szData == "exit")
-		{
-			ZinxKernel::Zinx_Exit();
-			return nullptr;
-		}
-		return new BytesMsg(oBytes);
-	}
-	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
-	{
-		return poEcho;
-	}
-} *poExit = new ExitFramework();
-
-class AddHandler : public AZinxHandler
-{
+class AddHandler : public AZinxHandler {
 public:
 	// 通过 AZinxHandler 继承
 	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
@@ -86,61 +67,90 @@ public:
 		GET_REF2DATA(BytesMsg, oBytes, _oInput);
 		time_t tmp;
 		time(&tmp);
-		char* p = ctime(&tmp);
-		p[strlen(p) - 1] = 0; //去掉末尾的换行符
-		string szNew = string(p) + " : " + oBytes.szData;
-		BytesMsg *pret = new BytesMsg(oBytes);
-		pret->szData = szNew;
-		return pret;
+		char* str = ctime(&tmp);
+		str[strlen(str) - 1] = 0; // 去掉末尾的\n
+		string szNew = string(str) + " : " + oBytes.szData;
+		BytesMsg* pRet = new BytesMsg(oBytes);
+		pRet->szData = szNew;
+		return pRet;
 	}
 	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
 	{
 		return poEcho;
 	}
-} *poAdd = new AddHandler;
+} *poAdd = new AddHandler();
 
-class CmdHandler : public AZinxHandler
-{
+class CmdHandler : public AZinxHandler {
 public:
+	enum State
+	{
+		CLOSE,
+		OPEN,
+		DATE,
+	} status = OPEN;
 	// 通过 AZinxHandler 继承
 	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
 	{
 		GET_REF2DATA(BytesMsg, oBytes, _oInput);
-		if (oBytes.szData == "open")
+		if (oBytes.szData == "exit")
+		{
+			ZinxKernel::Zinx_Exit();
+		}
+		else if (oBytes.szData == "open")
 		{
 			ZinxKernel::Zinx_Add_Channel(*poOut);
+			status = OPEN;
+			return nullptr;
 		}
 		else if (oBytes.szData == "close")
 		{
 			ZinxKernel::Zinx_Del_Channel(*poOut);
-		}
-		else if (oBytes.szData == "date")
-		{
-			status = 1;
-		}
-		else if (oBytes.szData == "closedate")
-		{
-			status = 0;
+			status = CLOSE;
+			/* 这样返回的话再次 open 时不会把之前 close 的输入值发送给 poEcho */
+			return nullptr;
+			/* 如果这样返回就会发送*/
+			// return new BytesMsg(oBytes);
 		}
 
-		return new BytesMsg(oBytes);
+		if (status == OPEN || status == DATE)
+		{
+			if (oBytes.szData == "date")
+			{
+				status = DATE;
+				return nullptr;
+			}
+			else if (oBytes.szData == "closedate")
+			{
+				status = OPEN;
+				return nullptr;
+			}
+		}
+
+		if (status == CLOSE)
+		{
+			return nullptr;
+		}
+		else
+		{
+			return new BytesMsg(oBytes);
+		}
 	}
+
 	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
 	{
-		if (status == 1)
+		if (status == DATE)
 		{
+			/* 如果为DATE, 返回poADD*/
 			return poAdd;
 		}
-		return poExit;
+		else
+		{
+			return poEcho;
+		}
 	}
-
-	int status = 0;
-
 } *poCmd = new CmdHandler();
 
-
-class TestStdin : public Ichannel
-{
+class TestIn :public Ichannel {
 public:
 	// 通过 Ichannel 继承
 	bool Init() override
@@ -165,13 +175,13 @@ public:
 	}
 	std::string GetChannelInfo() override
 	{
-		return "TestStdin";
+		return "TestIn";
 	}
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
 		return poCmd;
 	}
-} *poIn = new TestStdin();
+} *poIn = new TestIn();
 
 int main()
 {
@@ -179,6 +189,7 @@ int main()
 
 	ZinxKernel::Zinx_Add_Channel(*poIn);
 	ZinxKernel::Zinx_Add_Channel(*poOut);
+
 	ZinxKernel::Zinx_Run();
 
 	ZinxKernel::ZinxKernelFini();
