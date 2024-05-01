@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class TestStdout : public Ichannel
+class TestOut : public Ichannel
 {
 public:
 	// 通过 Ichannel 继承
@@ -29,13 +29,13 @@ public:
 	}
 	std::string GetChannelInfo() override
 	{
-		return "test";
+		return "TestOut";
 	}
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
 		return nullptr;
 	}
-} *poOut = new TestStdout();
+} *poOut = new TestOut();
 
 class Echo : public AZinxHandler
 {
@@ -44,55 +44,50 @@ public:
 	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
 	{
 		GET_REF2DATA(BytesMsg, oBytes, _oInput);
+		//cout << oBytes.szData;
 		ZinxKernel::Zinx_SendOut(oBytes.szData, *poOut);
 		return nullptr;
 	}
+
 	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
 	{
 		return nullptr;
 	}
+
 } *poEcho = new Echo();
 
 class TestStdin : public Ichannel
 {
 public:
-
 	// 通过 Ichannel 继承
 	bool Init() override
 	{
 		return true;
 	}
-
 	bool ReadFd(std::string& _input) override
 	{
 		cin >> _input;
 		return true;
 	}
-
 	bool WriteFd(std::string& _output) override
 	{
 		return false;
 	}
-
 	void Fini() override
 	{
 	}
-
 	int GetFd() override
 	{
 		return STDIN_FILENO;
 	}
-
 	std::string GetChannelInfo() override
 	{
-		return "test";
+		return "TestStdin";
 	}
-
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
 		return poEcho;
 	}
-
 } *poIn = new TestStdin();
 
 int main()
