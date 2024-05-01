@@ -77,6 +77,28 @@ public:
 	}
 } *poExit = new ExitFramework();
 
+class AddHandler : public AZinxHandler
+{
+public:
+	// 通过 AZinxHandler 继承
+	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
+	{
+		GET_REF2DATA(BytesMsg, oBytes, _oInput);
+		time_t tmp;
+		time(&tmp);
+		char* p = ctime(&tmp);
+		p[strlen(p) - 1] = 0; //去掉末尾的换行符
+		string szNew = string(p) + " : " + oBytes.szData;
+		BytesMsg *pret = new BytesMsg(oBytes);
+		pret->szData = szNew;
+		return pret;
+	}
+	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
+	{
+		return poEcho;
+	}
+} *poAdd = new AddHandler;
+
 class CmdHandler : public AZinxHandler
 {
 public:
@@ -92,13 +114,28 @@ public:
 		{
 			ZinxKernel::Zinx_Del_Channel(*poOut);
 		}
+		else if (oBytes.szData == "date")
+		{
+			status = 1;
+		}
+		else if (oBytes.szData == "closedate")
+		{
+			status = 0;
+		}
 
 		return new BytesMsg(oBytes);
 	}
 	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
 	{
+		if (status == 1)
+		{
+			return poAdd;
+		}
 		return poExit;
 	}
+
+	int status = 0;
+
 } *poCmd = new CmdHandler();
 
 
