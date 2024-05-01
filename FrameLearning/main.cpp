@@ -77,6 +77,30 @@ public:
 	}
 } *poExit = new ExitFramework();
 
+class CmdHandler : public AZinxHandler
+{
+public:
+	// 通过 AZinxHandler 继承
+	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
+	{
+		GET_REF2DATA(BytesMsg, oBytes, _oInput);
+		if (oBytes.szData == "open")
+		{
+			ZinxKernel::Zinx_Add_Channel(*poOut);
+		}
+		else if (oBytes.szData == "close")
+		{
+			ZinxKernel::Zinx_Del_Channel(*poOut);
+		}
+
+		return new BytesMsg(oBytes);
+	}
+	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
+	{
+		return poExit;
+	}
+} *poCmd = new CmdHandler();
+
 
 class TestStdin : public Ichannel
 {
@@ -108,7 +132,7 @@ public:
 	}
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
-		return poExit;
+		return poCmd;
 	}
 } *poIn = new TestStdin();
 
