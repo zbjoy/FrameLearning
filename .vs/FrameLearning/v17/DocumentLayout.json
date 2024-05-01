@@ -17,12 +17,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -31,8 +27,7 @@
               "ToolTip": "C:\\Users\\66426\\AppData\\Local\\Microsoft\\Linux\\HeaderCache\\1.0\\1428653511\\usr\\include\\malloc.h",
               "ViewState": "AQIAADgAAAAAAAAAAAAawDwAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-01T03:51:51.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T03:51:51.991Z"
             },
             {
               "$type": "Document",
@@ -42,7 +37,7 @@
               "RelativeDocumentMoniker": "FrameLearning\\main.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning\\main.cpp",
               "RelativeToolTip": "FrameLearning\\main.cpp",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAAAFwAAAAJAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-01T03:13:48.064Z",
               "EditorCaption": ""

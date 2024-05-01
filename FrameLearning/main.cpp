@@ -37,6 +37,7 @@ public:
 	}
 } *poOut = new TestOut();
 
+
 class Echo : public AZinxHandler
 {
 public:
@@ -55,6 +56,27 @@ public:
 	}
 
 } *poEcho = new Echo();
+
+class ExitFramework : public AZinxHandler
+{
+public:
+	// 通过 AZinxHandler 继承
+	IZinxMsg* InternelHandle(IZinxMsg& _oInput) override
+	{
+		GET_REF2DATA(BytesMsg, oBytes, _oInput);
+		if (oBytes.szData == "exit")
+		{
+			ZinxKernel::Zinx_Exit();
+			return nullptr;
+		}
+		return new BytesMsg(oBytes);
+	}
+	AZinxHandler* GetNextHandler(IZinxMsg& _oNextMsg) override
+	{
+		return poEcho;
+	}
+} *poExit = new ExitFramework();
+
 
 class TestStdin : public Ichannel
 {
@@ -86,7 +108,7 @@ public:
 	}
 	AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override
 	{
-		return poEcho;
+		return poExit;
 	}
 } *poIn = new TestStdin();
 
