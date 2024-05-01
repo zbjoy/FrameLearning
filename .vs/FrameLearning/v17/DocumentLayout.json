@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15EE811D-434B-4EAE-831F-1734C38EE11F}|FrameLearning\\FrameLearning.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{15EE811D-434B-4EAE-831F-1734C38EE11F}|FrameLearning\\FrameLearning.vcxproj|solutionrelative:FrameLearning\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15EE811D-434B-4EAE-831F-1734C38EE11F}|FrameLearning\\FrameLearning.vcxproj|C:\\USERS\\66426\\APPDATA\\LOCAL\\MICROSOFT\\LINUX\\HEADERCACHE\\1.0\\1428653511\\USR\\INCLUDE\\MALLOC.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "malloc.h",
+              "DocumentMoniker": "C:\\Users\\66426\\AppData\\Local\\Microsoft\\Linux\\HeaderCache\\1.0\\1428653511\\usr\\include\\malloc.h",
+              "ToolTip": "C:\\Users\\66426\\AppData\\Local\\Microsoft\\Linux\\HeaderCache\\1.0\\1428653511\\usr\\include\\malloc.h",
+              "ViewState": "AQIAADgAAAAAAAAAAAAawDwAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-01T03:51:51.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning\\main.cpp",
+              "RelativeDocumentMoniker": "FrameLearning\\main.cpp",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning\\main.cpp",
+              "RelativeToolTip": "FrameLearning\\main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-01T03:13:48.064Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
