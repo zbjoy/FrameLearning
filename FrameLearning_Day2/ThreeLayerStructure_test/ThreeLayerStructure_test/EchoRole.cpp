@@ -23,6 +23,18 @@ void EchoRole::Fini()
 
 bool OutputCtl::Init()
 {
+    Irole* pRole = NULL;
+    auto roleList = ZinxKernel::Zinx_GetAllRole();
+    for (auto pDate : roleList)
+    {
+		auto pDateRole = dynamic_cast<DataPreCtl*>(pDate);
+		if (pDateRole)
+		{
+            pRole = pDateRole;
+            break;
+        }
+    }
+    SetNextProcessor(*pRole);
     return true;
 }
 
@@ -35,7 +47,9 @@ UserData* OutputCtl::ProcMsg(UserData& _poUserData)
     }
     if (input.isOpen)
     {
-        ZinxKernel::Zinx_Add_Channel(*pOut);
+        if (pOut != NULL)
+			ZinxKernel::Zinx_Add_Channel(*pOut);
+        pOut = NULL;
     }
     else
     {
@@ -43,9 +57,51 @@ UserData* OutputCtl::ProcMsg(UserData& _poUserData)
         ZinxKernel::Zinx_Del_Channel(*pChannel);
         pOut = pChannel;
     }
-    return nullptr;
+
+    return new CmdMsg(input);
 }
 
 void OutputCtl::Fini()
+{
+}
+
+bool DataPreCtl::Init()
+{
+    Irole* pRole = NULL;
+    auto roleList = ZinxKernel::Zinx_GetAllRole();
+    for (auto pEcho : roleList)
+    {
+        auto pEchoRole = dynamic_cast<EchoRole*>(pEcho);
+        if (pEchoRole)
+        {
+			pRole = pEchoRole;
+			break;
+		}
+    }
+    SetNextProcessor(*pRole);
+    return true;
+}
+
+UserData* DataPreCtl::ProcMsg(UserData& _poUserData)
+{
+	GET_REF2DATA(CmdMsg, input, _poUserData);
+    char* p = NULL;
+    if (input.isNeedDataPre)
+    {
+        time_t tmp;
+        time(&tmp);
+        p = ctime(&tmp);
+        p[strlen(p) - 1] = 0;
+		input.szUserData = string(p) + " : " + input.szUserData;
+	}
+    CmdMsg* pRet = new CmdMsg(input);
+    /*if (input.isCmd)
+    {
+        return nullptr;
+    }*/
+    return pRet;
+}
+
+void DataPreCtl::Fini()
 {
 }

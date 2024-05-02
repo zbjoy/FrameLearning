@@ -12,5 +12,6 @@ public:
     bool isOpen = true;
     bool isCmd = false;
     bool isExit = false;
+    bool isNeedDataPre = false;
 };
 

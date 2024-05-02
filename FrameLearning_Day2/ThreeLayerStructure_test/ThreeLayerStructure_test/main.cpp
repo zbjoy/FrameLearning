@@ -12,6 +12,7 @@ int main()
 	ZinxKernel::Zinx_Add_Channel(*(new StdInChannel()));
 	ZinxKernel::Zinx_Add_Channel(*(new StdOutChannel()));
 	ZinxKernel::Zinx_Add_Role(*(new EchoRole()));
+	ZinxKernel::Zinx_Add_Role(*(new DataPreCtl()));
 	ZinxKernel::Zinx_Add_Role(*(new OutputCtl()));
 
 	ZinxKernel::Zinx_Run();

@@ -32,6 +32,16 @@ UserData* CmdVerify::raw2request(std::string _szInput)
         pRet->isCmd = true;
 		pRet->isExit = true;
     }
+    else if (_szInput == "date")
+    {
+		pRet->isNeedDataPre = true;
+		pRet->isCmd = true;
+    }
+    else if (_szInput == "closedate")
+    {
+        pRet->isCmd = true;
+        pRet->isNeedDataPre = false;
+    }
     return pRet;
 }
 
@@ -62,10 +72,10 @@ Irole* CmdVerify::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
         }
         else
         {
-			auto pEchoRole = dynamic_cast<EchoRole*>(pRole);
-			if (pEchoRole)
+			auto pDateRole = dynamic_cast<DataPreCtl*>(pRole);
+			if (pDateRole)
 			{
-				pRet = pEchoRole;
+				pRet = pDateRole;
 				break;
 			}
         }
