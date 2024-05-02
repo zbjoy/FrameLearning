@@ -34,12 +34,21 @@ UserData* CmdVerify::raw2request(std::string _szInput)
     }
     else if (_szInput == "date")
     {
-		pRet->isNeedDataPre = true;
+        isNeedDataPre = true;
 		pRet->isCmd = true;
     }
     else if (_szInput == "closedate")
     {
         pRet->isCmd = true;
+        isNeedDataPre = false;
+    }
+
+    if (isNeedDataPre)
+    {
+        pRet->isNeedDataPre = true;
+    }
+    else
+    {
         pRet->isNeedDataPre = false;
     }
     return pRet;
@@ -53,6 +62,12 @@ std::string* CmdVerify::response2raw(UserData& _oUserData)
 
 Irole* CmdVerify::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
 {
+    /* 数据来源 */
+    szOutChannel = _oUserDataMsg.szInfo;
+    if (szOutChannel == "stdin")
+    {
+        szOutChannel = "stdout";
+    }
     /* 交给业务层处理 */
     auto roleList = ZinxKernel::Zinx_GetAllRole();
     Irole* pRet = nullptr;
@@ -85,5 +100,5 @@ Irole* CmdVerify::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
 
 Ichannel* CmdVerify::GetMsgSender(BytesMsg& _oBytes)
 {
-    return ZinxKernel::Zinx_GetChannel_ByInfo("stdout");
+    return ZinxKernel::Zinx_GetChannel_ByInfo(szOutChannel);
 }

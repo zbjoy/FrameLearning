@@ -1,5 +1,9 @@
 #pragma once
 #include <zinx.h>
+#include <iostream>
+
+using namespace std;
+
 class CmdVerify :
     public Iprotocol
 {
@@ -18,5 +22,8 @@ public:
     {
 		return m_instance;
 	}
+
+    string szOutChannel;
+    bool isNeedDataPre = false;
 };
 

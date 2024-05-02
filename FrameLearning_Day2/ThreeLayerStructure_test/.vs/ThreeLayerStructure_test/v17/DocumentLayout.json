@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\EchoRole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdVerify.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\CmdVerify.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,12 +11,24 @@
       "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\CmdVerify.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\StdInOutChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\StdInOutChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\EchoRole.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\EchoRole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -29,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\CmdMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\StdInOutChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{76D48572-550E-4F5D-B531-44D896EB61D6}|ThreeLayerStructure_test\\ThreeLayerStructure_test.vcxproj|solutionrelative:ThreeLayerStructure_test\\StdInOutChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CmdMsg.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdMsg.cpp",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\CmdMsg.cpp",
@@ -58,88 +58,89 @@
               "RelativeToolTip": "ThreeLayerStructure_test\\CmdMsg.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T09:34:32.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T09:34:32.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "EchoRole.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.cpp",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\EchoRole.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.cpp",
               "RelativeToolTip": "ThreeLayerStructure_test\\EchoRole.cpp",
-              "ViewState": "AQIAACgAAAAAAAAAAAAywDkAAAAXAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAywDcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-02T04:45:57.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "EchoRole.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.h",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\EchoRole.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\EchoRole.h",
               "RelativeToolTip": "ThreeLayerStructure_test\\EchoRole.h",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAywBwAAAANAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAAB8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-02T04:45:45.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CmdVerify.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdVerify.cpp",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\CmdVerify.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdVerify.cpp",
               "RelativeToolTip": "ThreeLayerStructure_test\\CmdVerify.cpp",
-              "ViewState": "AQIAACYAAAAAAAAAAAAQwC0AAAAAAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAAADUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-02T04:30:54.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CmdVerify.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdVerify.h",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\CmdVerify.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdVerify.h",
               "RelativeToolTip": "ThreeLayerStructure_test\\CmdVerify.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAATAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-02T04:30:39.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "StdInOutChannel.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.cpp",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\StdInOutChannel.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.cpp",
               "RelativeToolTip": "ThreeLayerStructure_test\\StdInOutChannel.cpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAA3wA0AAAAOAAAA",
+              "ViewState": "AQIAAEwAAAAAAAAAAAA6wFQAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T04:20:39.605Z"
+              "WhenOpened": "2024-05-02T04:20:39.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "StdInOutChannel.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.h",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\StdInOutChannel.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\StdInOutChannel.h",
               "RelativeToolTip": "ThreeLayerStructure_test\\StdInOutChannel.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA2wCMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T04:20:06.121Z"
+              "WhenOpened": "2024-05-02T04:20:06.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CmdMsg.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\CmdMsg.h",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\CmdMsg.h",
@@ -147,18 +148,17 @@
               "RelativeToolTip": "ThreeLayerStructure_test\\CmdMsg.h",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T04:16:42.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T04:16:42.593Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\main.cpp",
               "RelativeDocumentMoniker": "ThreeLayerStructure_test\\main.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day2\\ThreeLayerStructure_test\\ThreeLayerStructure_test\\main.cpp",
               "RelativeToolTip": "ThreeLayerStructure_test\\main.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAvAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA4wAwAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-02T04:08:33.716Z",
               "EditorCaption": ""
