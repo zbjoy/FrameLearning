@@ -20,3 +20,32 @@ UserData* EchoRole::ProcMsg(UserData& _poUserData)
 void EchoRole::Fini()
 {
 }
+
+bool OutputCtl::Init()
+{
+    return true;
+}
+
+UserData* OutputCtl::ProcMsg(UserData& _poUserData)
+{
+    GET_REF2DATA(CmdMsg, input, _poUserData);
+    if (input.isExit)
+    {
+        ZinxKernel::Zinx_Exit();
+    }
+    if (input.isOpen)
+    {
+        ZinxKernel::Zinx_Add_Channel(*pOut);
+    }
+    else
+    {
+        Ichannel* pChannel = ZinxKernel::Zinx_GetChannel_ByInfo("stdout");
+        ZinxKernel::Zinx_Del_Channel(*pChannel);
+        pOut = pChannel;
+    }
+    return nullptr;
+}
+
+void OutputCtl::Fini()
+{
+}

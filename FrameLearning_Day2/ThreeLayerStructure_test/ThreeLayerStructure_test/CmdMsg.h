@@ -9,5 +9,8 @@ class CmdMsg :
 {
 public:
     string szUserData;
+    bool isOpen = true;
+    bool isCmd = false;
+    bool isExit = false;
 };
 
