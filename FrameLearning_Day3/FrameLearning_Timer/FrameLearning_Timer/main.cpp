@@ -2,6 +2,7 @@
 #include <zinx.h>
 #include "RoleProcess.h"
 #include "IOChannel.h"
+#include "ZinxTimer.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ int main()
 	ZinxKernel::Zinx_Add_Role(*new AddDatePreCtl());
 	ZinxKernel::Zinx_Add_Role(*new InOutCtl());
 	ZinxKernel::Zinx_Add_Channel(*new ZinxTCPListen(9998, new myTcpConnFact()));
+	ZinxKernel::Zinx_Add_Channel(*new ZinxTimerChannel());
 
 	ZinxKernel::Zinx_Run();
 

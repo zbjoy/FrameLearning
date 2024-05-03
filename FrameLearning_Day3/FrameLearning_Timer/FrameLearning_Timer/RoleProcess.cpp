@@ -112,13 +112,3 @@ UserData* Echo::ProcMsg(UserData& _poUserData)
 void Echo::Fini()
 {
 }
-
-AZinxHandler* myTcpData::GetInputNextStage(BytesMsg& _oInput)
-{
-    return CmdVerify::getInstance();
-}
-
-ZinxTcpData* myTcpConnFact::CreateTcpDataChannel(int _fd)
-{
-    return new myTcpData(_fd);
-}

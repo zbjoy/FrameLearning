@@ -81,12 +81,14 @@
     <ClCompile Include="IOChannel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RoleProcess.cpp" />
+    <ClCompile Include="ZinxTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmdMsg.h" />
     <ClInclude Include="CmdVerify.h" />
     <ClInclude Include="IOChannel.h" />
     <ClInclude Include="RoleProcess.h" />
+    <ClInclude Include="ZinxTimer.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
