@@ -4,6 +4,10 @@
   正在验证体系结构
   正在启动远程生成
   正在编译源:
+  CmdMsg.cpp
+  CmdVerify.cpp
+  IOChannel.cpp
+  main.cpp
   RoleProcess.cpp
 E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day3\FrameLearning_Timer\FrameLearning_Timer\RoleProcess.cpp(26,12): warning : enumeration value ‘DATE’ not handled in switch [-Wswitch]
 E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day3\FrameLearning_Timer\FrameLearning_Timer\RoleProcess.cpp(26,12): warning :    26 |     switch (_input.mCmd)

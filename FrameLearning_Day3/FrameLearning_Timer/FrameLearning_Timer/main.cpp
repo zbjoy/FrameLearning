@@ -14,6 +14,7 @@ int main()
 	ZinxKernel::Zinx_Add_Role(*new Echo());
 	ZinxKernel::Zinx_Add_Role(*new AddDatePreCtl());
 	ZinxKernel::Zinx_Add_Role(*new InOutCtl());
+	ZinxKernel::Zinx_Add_Channel(*new ZinxTCPListen(9998, new myTcpConnFact()));
 
 	ZinxKernel::Zinx_Run();
 
