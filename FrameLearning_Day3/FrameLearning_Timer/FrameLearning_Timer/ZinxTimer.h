@@ -1,6 +1,7 @@
 #pragma once
 #include <zinx.h>
-
+#include <vector>
+#include <list>
 
 class ZinxTimerChannel : public Ichannel
 {
@@ -39,9 +40,14 @@ public:
 
 class TimerOutMng : public AZinxHandler
 {
-    std::list<TimerOutProc*> m_task_list;
+    // std::list<TimerOutProc*> m_task_list;
 
+    TimerOutMng();
     static TimerOutMng single;
+
+    int iCount = 0;
+
+    std::vector<std::list<TimerOutProc*>> m_timer_wheel;
 public:
 
     // 通过 AZinxHandler 继承

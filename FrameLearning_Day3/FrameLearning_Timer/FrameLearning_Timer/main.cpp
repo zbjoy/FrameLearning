@@ -31,6 +31,7 @@ public:
 		Ichannel* pChannel = ZinxKernel::Zinx_GetChannel_ByInfo("stdout");
 		std::string output = "bye bye";
 		ZinxKernel::Zinx_SendOut(output, *pChannel);
+		// TimerOutMng::getInstance().DelTask(this);
 	}
 	int GetTimeSec() override
 	{

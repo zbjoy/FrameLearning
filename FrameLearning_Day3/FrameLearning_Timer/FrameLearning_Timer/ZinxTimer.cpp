@@ -70,7 +70,7 @@ std::string ZinxTimerChannel::GetChannelInfo()
     return "TimerFd";
 }
 
-output_hello* pout_hello = new output_hello();
+// output_hello* pout_hello = new output_hello();
 TimerOutMng TimerOutMng::single;
 
 AZinxHandler* ZinxTimerChannel::GetInputNextStage(BytesMsg& _oInput)
@@ -79,18 +79,49 @@ AZinxHandler* ZinxTimerChannel::GetInputNextStage(BytesMsg& _oInput)
 }
 
 
+TimerOutMng::TimerOutMng()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        std::list<TimerOutProc*> temp;
+        m_timer_wheel.push_back(temp);
+    }
+}
+
 IZinxMsg* TimerOutMng::InternelHandle(IZinxMsg& _oInput)
 {
-    for (auto task : m_task_list)
+    int iTimerOutCount = 0;
+    GET_REF2DATA(BytesMsg, oOutput, _oInput);
+    oOutput.szData.copy((char*)&iTimerOutCount, sizeof(iTimerOutCount), 0);
+
+    while (iTimerOutCount-- > 0)
     {
-        task->iCount--;
-        if (task->iCount <= 0)
-        {
-            task->Proc();
-            task->iCount = task->GetTimeSec();
-        }
-    }
-    return nullptr;
+		iCount++;
+		iCount = iCount % 10;
+		std::list<TimerOutProc*> m_cache;
+		for (auto itr = m_timer_wheel[iCount].begin(); itr != m_timer_wheel[iCount].end(); )
+		{
+			if ((*itr)->iCount <= 0)
+			{
+				m_cache.push_back(*itr);
+				// (*itr)->Proc();
+				auto ptmp = *itr;
+				itr = m_timer_wheel[iCount].erase(itr);
+				AddTask(ptmp);
+			}
+			else
+			{
+				(*itr)->iCount--;
+				itr++;
+			}
+		}
+
+		for (auto task : m_cache)
+		{
+			task->Proc();
+		}
+	}
+	return nullptr;
 }
 
 AZinxHandler* TimerOutMng::GetNextHandler(IZinxMsg& _oNextMsg)
@@ -100,11 +131,24 @@ AZinxHandler* TimerOutMng::GetNextHandler(IZinxMsg& _oNextMsg)
 
 void TimerOutMng::AddTask(TimerOutProc* _ptask)
 {
-    m_task_list.push_back(_ptask);
-    _ptask->iCount = _ptask->GetTimeSec();
+    int index = (_ptask->GetTimeSec() + iCount) % 10;
+    _ptask->iCount = _ptask->GetTimeSec() / 10;
+    m_timer_wheel[index].push_back(_ptask);
 }
 
 void TimerOutMng::DelTask(TimerOutProc* _ptask)
 {
-    m_task_list.remove(_ptask);
+    for (std::vector<std::list<TimerOutProc*>>::iterator itr = m_timer_wheel.begin(); itr != m_timer_wheel.end();)
+    {
+        for (auto p : (*itr))
+        {
+            if (p == _ptask)
+            {
+                // itr->remove(p);
+                (*itr).remove(p);
+                return;
+            }
+        }
+        itr++;
+    }
 }
