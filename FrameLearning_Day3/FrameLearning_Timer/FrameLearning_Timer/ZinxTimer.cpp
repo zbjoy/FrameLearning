@@ -71,9 +71,40 @@ std::string ZinxTimerChannel::GetChannelInfo()
 }
 
 output_hello* pout_hello = new output_hello();
+TimerOutMng TimerOutMng::single;
 
 AZinxHandler* ZinxTimerChannel::GetInputNextStage(BytesMsg& _oInput)
 {
-    return pout_hello;
+    return &TimerOutMng::getInstance();
 }
 
+
+IZinxMsg* TimerOutMng::InternelHandle(IZinxMsg& _oInput)
+{
+    for (auto task : m_task_list)
+    {
+        task->iCount--;
+        if (task->iCount <= 0)
+        {
+            task->Proc();
+            task->iCount = task->GetTimeSec();
+        }
+    }
+    return nullptr;
+}
+
+AZinxHandler* TimerOutMng::GetNextHandler(IZinxMsg& _oNextMsg)
+{
+    return nullptr;
+}
+
+void TimerOutMng::AddTask(TimerOutProc* _ptask)
+{
+    m_task_list.push_back(_ptask);
+    _ptask->iCount = _ptask->GetTimeSec();
+}
+
+void TimerOutMng::DelTask(TimerOutProc* _ptask)
+{
+    m_task_list.remove(_ptask);
+}
