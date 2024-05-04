@@ -1,11 +1,13 @@
 #pragma once
 #include <zinx.h>
 #include <google/protobuf/message.h>
+#include <list>
 
 class GameMsg :
     public UserData
 {
 public:
+    /* 用来存储消息 */
     google::protobuf::Message* pMsg = NULL;
     enum MSG_TYPE
     {
@@ -21,5 +23,11 @@ public:
     GameMsg(MSG_TYPE _type, std::string _strstream);
 
     std::string serialize();
+};
+
+class MultiMsg : public UserData
+{
+public:
+    std::list<GameMsg*> m_msg_list;
 };
 

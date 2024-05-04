@@ -9,5 +9,7 @@ public:
     std::string* response2raw(UserData& _oUserData) override;
     Irole* GetMsgProcessor(UserDataMsg& _oUserDataMsg) override;
     Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
+
+    std::string szLast;
 };
 

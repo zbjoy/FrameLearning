@@ -10,7 +10,7 @@ int main()
 {
 	pb::SyncPid* pMsg = new pb::SyncPid();
 	pMsg->set_pid(1);
-	pMsg->set_username("hello user");
+	pMsg->set_username("test");
 
 	GameMsg gameMsg(GameMsg::MSG_TYPE_LOGIN_ID_NAME, pMsg);
 	auto ret = gameMsg.serialize();

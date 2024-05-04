@@ -16,5 +16,6 @@ ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
 
     /* 将协议对象添加到kernel中 */
     ZinxKernel::Zinx_Add_Proto(*pProto); // 第一次这样 // 感觉是为了好找
+    /* 将pProto加入ZinxKernel中有什么意义??? */
     return pChannel;
 }
