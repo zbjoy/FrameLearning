@@ -81,12 +81,14 @@
     <ClCompile Include="GameProtocol.cpp" />
     <ClCompile Include="GameRole.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="msg.pb.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameChannel.h" />
     <ClInclude Include="GameMsg.h" />
     <ClInclude Include="GameProtocol.h" />
     <ClInclude Include="GameRole.h" />
+    <ClInclude Include="msg.pb.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
