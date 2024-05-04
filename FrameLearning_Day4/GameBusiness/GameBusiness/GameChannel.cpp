@@ -13,6 +13,7 @@ ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
     GameProtocol* pProto = new GameProtocol();
     /* 将protocol与TcpData绑定 */
     pChannel->m_proto = pProto;
+    pProto->m_channel = pChannel;
 
     /* 将协议对象添加到kernel中 */
     ZinxKernel::Zinx_Add_Proto(*pProto); // 第一次这样 // 感觉是为了好找

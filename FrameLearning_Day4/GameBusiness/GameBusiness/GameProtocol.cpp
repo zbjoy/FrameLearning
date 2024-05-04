@@ -1,6 +1,8 @@
 #include "GameProtocol.h"
 #include "GameMsg.h"
+#include "GameChannel.h"
 #include <iostream>
+#include "msg.pb.h"
 
 using namespace std;
 
@@ -59,12 +61,49 @@ UserData* GameProtocol::raw2request(std::string _szInput)
 		cout << "google std debug:" << endl;
 		cout << single->pMsg->Utf8DebugString() << endl;
 	}
+
+	/* 测试 */
+	pb::Talk* pmsg = new pb::Talk();
+	pmsg->set_content("hello");
+	GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_CHAT_CONTENT, pmsg);
+	ZinxKernel::Zinx_SendOut(*pGameMsg, *this);
 	return pRet;
 }
 
 std::string* GameProtocol::response2raw(UserData& _oUserData)
 {
-    return nullptr;
+	/*  根本看不懂  */
+	int iLength = 0;
+	int id = 0;
+	std::string MsgContent;
+
+	GET_REF2DATA(GameMsg, oOutput, _oUserData);
+	id = oOutput.enMsgType;
+	MsgContent = oOutput.serialize();
+	iLength = MsgContent.size();
+
+	auto pret = new std::string();
+
+	pret->push_back((iLength >> 0) & 0xFF);
+	pret->push_back((iLength >> 8) & 0xFF);
+	pret->push_back((iLength >> 16) & 0xFF);
+	pret->push_back((iLength >> 24) & 0xFF);
+
+	pret->push_back((id >> 0) & 0xFF);
+	pret->push_back((id >> 8) & 0xFF);
+	pret->push_back((id >> 16) & 0xFF);
+	pret->push_back((id >> 24) & 0xFF);
+	//pret[1] = (iLength >> 8) & 0xFF;
+	//pret[2] = (iLength >> 16) & 0xFF;
+	//pret[3] = (iLength >> 24) & 0xFF;
+
+	//pret[4] = (id >> 0) & 0xFF;
+	//pret[5] = (id>> 8) & 0xFF;
+	//pret[6] = (id >> 16) & 0xFF;
+	//pret[7] = (id >> 24) & 0xFF;
+
+	pret->append(MsgContent);
+	return pret;
 }
 
 Irole* GameProtocol::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
@@ -72,7 +111,9 @@ Irole* GameProtocol::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
     return nullptr;
 }
 
+/* 返回数据发送的通道 */
 Ichannel* GameProtocol::GetMsgSender(BytesMsg& _oBytes)
 {
-    return nullptr;
+	/* 要包含头文件: "GameChannel.h" */
+	return m_channel;
 }

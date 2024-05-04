@@ -1,5 +1,8 @@
 #pragma once
 #include <zinx.h>
+
+/* 不能加 "GameChannel.h" 否则会出现循环引用 */
+class GameChannel;
 class GameProtocol :
     public Iprotocol
 {
@@ -11,5 +14,6 @@ public:
     Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
 
     std::string szLast;
+    GameChannel* m_channel = NULL;
 };
 
