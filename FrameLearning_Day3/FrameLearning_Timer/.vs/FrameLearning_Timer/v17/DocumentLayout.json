@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\ZinxTimer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|solutionrelative:FrameLearning_Timer\\ZinxTimer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|solutionrelative:FrameLearning_Timer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\RoleProcess.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|solutionrelative:FrameLearning_Timer\\RoleProcess.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\ZinxTimer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|solutionrelative:FrameLearning_Timer\\ZinxTimer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{895296F1-BFDD-4857-998B-EE0BDB3915E1}|FrameLearning_Timer\\FrameLearning_Timer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\IOChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ZinxTimer.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\ZinxTimer.cpp",
               "RelativeDocumentMoniker": "FrameLearning_Timer\\ZinxTimer.cpp",
@@ -66,18 +66,17 @@
               "RelativeToolTip": "FrameLearning_Timer\\ZinxTimer.cpp",
               "ViewState": "AQIAAF0AAAAAAAAAAAAuwGYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-03T06:57:38.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T06:57:38.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ZinxTimer.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\ZinxTimer.h",
               "RelativeDocumentMoniker": "FrameLearning_Timer\\ZinxTimer.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\ZinxTimer.h",
               "RelativeToolTip": "FrameLearning_Timer\\ZinxTimer.h",
-              "ViewState": "AQIAACcAAAAAAAAAAAAewCoAAAAGAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAewCoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-03T06:57:21.648Z",
               "EditorCaption": ""
@@ -96,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RoleProcess.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\RoleProcess.cpp",
               "RelativeDocumentMoniker": "FrameLearning_Timer\\RoleProcess.cpp",
@@ -104,8 +103,7 @@
               "RelativeToolTip": "FrameLearning_Timer\\RoleProcess.cpp",
               "ViewState": "AQIAACMAAAAAAAAAAAAAABkAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-03T05:40:04.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T05:40:04.827Z"
             },
             {
               "$type": "Document",
@@ -181,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day3\\FrameLearning_Timer\\FrameLearning_Timer\\main.cpp",
               "RelativeDocumentMoniker": "FrameLearning_Timer\\main.cpp",
