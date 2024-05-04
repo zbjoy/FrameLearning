@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|solutionrelative:GameBusiness\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|solutionrelative:GameBusiness\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|solutionrelative:GameBusiness\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|solutionrelative:GameBusiness\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|solutionrelative:GameBusiness\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0927C5FA-4BDD-4106-A73E-63DCA274BB57}|GameBusiness\\GameBusiness.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameMsg.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.cpp",
               "RelativeDocumentMoniker": "GameBusiness\\GameMsg.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.cpp",
               "RelativeToolTip": "GameBusiness\\GameMsg.cpp",
-              "ViewState": "AQIAABkAAAAAAAAAAAAywBYAAAAcAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-04T03:55:53.034Z",
               "EditorCaption": ""
@@ -69,7 +69,7 @@
               "RelativeDocumentMoniker": "GameBusiness\\GameMsg.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\GameMsg.h",
               "RelativeToolTip": "GameBusiness\\GameMsg.h",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAywBYAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-04T03:06:15.774Z",
               "EditorCaption": ""
@@ -148,13 +148,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\main.cpp",
               "RelativeDocumentMoniker": "GameBusiness\\main.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\FrameLearning_Day4\\GameBusiness\\GameBusiness\\main.cpp",
               "RelativeToolTip": "GameBusiness\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAoAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-04T03:00:41.019Z",
               "EditorCaption": ""

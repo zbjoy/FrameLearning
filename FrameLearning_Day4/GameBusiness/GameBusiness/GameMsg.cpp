@@ -32,9 +32,14 @@ GameMsg::GameMsg(MSG_TYPE _type, std::string _strstream)
 		break;
 	}
 
+	/* 将参数内容解析成strstream对象 */
+	pMsg->ParseFromString(_strstream);
 }
 
+/* 序列化消息 */
 std::string GameMsg::serialize()
 {
-	return std::string();
+	std::string ret;
+	pMsg->SerializeToString(&ret);
+	return ret;
 }
