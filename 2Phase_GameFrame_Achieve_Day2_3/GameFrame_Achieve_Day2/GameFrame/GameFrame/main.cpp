@@ -56,6 +56,7 @@ int main()
 		
 
 	/* 测试代码 */
+	/*
 		AOIWorld w(20, 200, 50, 230, 6, 6);
 		myPlayer p1(60.2, 107.2, "玩家1");
 		myPlayer p2(91.5, 118.3, "玩家2");
@@ -70,6 +71,7 @@ int main()
 		{
 			cout << "玩家姓名: " << (dynamic_cast<myPlayer*>(single))->name << endl;
 		}
+	*/
 
 
 	ZinxKernel::ZinxKernelInit();
