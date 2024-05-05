@@ -13,11 +13,77 @@ AOIWorld::AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_co
 	}
 }
 
+std::list<Player*> AOIWorld::GetSrdPlayer(Player* _player)
+{
+	std::list<Player*> ret_list;
+	// int grid = ((int)_player->GetX() - x_begin) % x_width + (((int)_player->GetY() - y_begin) / y_width) * x_count;
+	int grid = ((int)_player->GetX() - x_begin) / x_width + (((int)_player->GetY() - y_begin) / y_width) * x_count;
+	// int x_index = ((int)_player->GetX() - x_begin) % x_width;
+	int x_index = grid % x_count;
+	int y_index = grid / x_count;
+	if (x_index > 0 && y_index > 0)
+	{
+		// 用引用来接收更好
+		/*
+			std::list<Player*> &tmp = m_grids[...].m_player_list;	
+		*/
+		std::list<Player*> tmp = m_grids[grid - 1 - x_count].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (y_index > 0)
+	{
+		std::list<Player*> tmp = m_grids[grid - x_count].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (y_index > 0 && x_index < x_count - 1)
+	{
+		std::list<Player*> tmp = m_grids[grid - x_count + 1].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (x_index > 0)
+	{
+		std::list<Player*> tmp = m_grids[grid - 1].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	std::list<Player*> tmp = m_grids[grid].m_player_list;
+	ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+
+	if (x_index < x_count - 1)
+	{
+		std::list<Player*> tmp = m_grids[grid + 1].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (x_index > 0 && y_index < y_count - 1)
+	{
+		std::list<Player*> tmp = m_grids[grid - 1 + x_count].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (y_index < y_count - 1)
+	{
+		std::list<Player*> tmp = m_grids[grid + x_count].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	if (y_index < y_count - 1 && x_index < x_count - 1)
+	{
+		std::list<Player*> tmp = m_grids[grid + x_count + 1].m_player_list;
+		ret_list.insert(ret_list.end(), tmp.begin(), tmp.end());
+	}
+
+	return ret_list;
+}
+
 bool AOIWorld::Add_Player(Player* _player)
 {
-	int grdid = 0;
-	grdid = ((int)_player->GetX() - x_begin) / x_width + (((int)_player->GetY() - y_begin) / y_width) * x_count;
-	m_grids[grdid].m_player_list.push_back(_player);
+	int grid = 0;
+	grid = ((int)_player->GetX() - x_begin) / x_width + (((int)_player->GetY() - y_begin) / y_width) * x_count;
+	m_grids[grid].m_player_list.push_back(_player);
 	return true;
 }
 

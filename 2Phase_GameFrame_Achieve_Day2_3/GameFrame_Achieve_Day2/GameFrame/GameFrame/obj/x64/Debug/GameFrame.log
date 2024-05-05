@@ -5,46 +5,21 @@
   正在启动远程生成
   正在编译源:
   AOIWorld.cpp
-  GameChannel.cpp
-  GameMsg.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameMsg.h(20,7): warning : ‘GameMsg::enMsgType’ will be initialized after [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameMsg.h(20,7): warning :    20 |     } enMsgType;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameMsg.h(20,7): warning :       |       ^~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameMsg.h(11,32): warning : ‘google::protobuf::Message* GameMsg::pMsg’ [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameMsg.cpp(4,1): warning : when initialized here [-Wreorder]
-  GameProtocol.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(48,39): warning : comparison of integer expressions of different signedness: ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(48,39): warning :    48 |                 if (szLast.size() - 8 < m_length)
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(48,39): warning :       |                     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(96,34): warning : conversion from ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(96,34): warning :    96 |         iLength = MsgContent.size();
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(96,34): warning :       |                   ~~~~~~~~~~~~~~~^~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(101,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(101,40): warning :   101 |         pret->push_back((iLength >> 0) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(101,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(102,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(102,40): warning :   102 |         pret->push_back((iLength >> 8) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(102,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(103,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(103,41): warning :   103 |         pret->push_back((iLength >> 16) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(103,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(104,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(104,41): warning :   104 |         pret->push_back((iLength >> 24) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(104,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(106,35): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(106,35): warning :   106 |         pret->push_back((id >> 0) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(106,35): warning :       |                         ~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(107,35): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(107,35): warning :   107 |         pret->push_back((id >> 8) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(107,35): warning :       |                         ~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(108,36): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(108,36): warning :   108 |         pret->push_back((id >> 16) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(108,36): warning :       |                         ~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(109,36): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(109,36): warning :   109 |         pret->push_back((id >> 24) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\GameProtocol.cpp(109,36): warning :       |                         ~~~~~~~~~~~^~~~~~
-  GameRole.cpp
   main.cpp
-  msg.pb.cpp
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,29): warning : conversion from ‘double’ to ‘float’ changes value from ‘6.0200000000000003e+1’ to ‘6.02000008e+1f’ [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,29): warning :    60 |                 myPlayer p1(60.2, 107.2, "玩家1");
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,29): warning :       |                             ^~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,35): warning : conversion from ‘double’ to ‘float’ changes value from ‘1.072e+2’ to ‘1.07199997e+2f’ [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,35): warning :    60 |                 myPlayer p1(60.2, 107.2, "玩家1");
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(60,35): warning :       |                                   ^~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(61,35): warning : conversion from ‘double’ to ‘float’ changes value from ‘1.183e+2’ to ‘1.18300003e+2f’ [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(61,35): warning :    61 |                 myPlayer p2(91.5, 118.3, "玩家2");
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(61,35): warning :       |                                   ^~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,29): warning : conversion from ‘double’ to ‘float’ changes value from ‘1.4759999999999999e+2’ to ‘1.47600006e+2f’ [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,29): warning :    62 |                 myPlayer p3(147.6, 133.6, "玩家3");
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,29): warning :       |                             ^~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,36): warning : conversion from ‘double’ to ‘float’ changes value from ‘1.3359999999999999e+2’ to ‘1.33600006e+2f’ [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,36): warning :    62 |                 myPlayer p3(147.6, 133.6, "玩家3");
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\main.cpp(62,36): warning :       |                                    ^~~~~
   正在链接对象
   GameFrame.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day2\GameFrame\GameFrame\bin\x64\Debug\GameFrame.out
