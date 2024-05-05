@@ -26,6 +26,7 @@ UserData* GameProtocol::raw2request(std::string _szInput)
 
 		int m_length = 0;
 
+		/* 如果是大端字节序是不是就应该右移为高位??? */
 		m_length |= szLast[0] << 0;
 		m_length |= szLast[1] << 8;
 		m_length |= szLast[2] << 16;
@@ -44,6 +45,9 @@ UserData* GameProtocol::raw2request(std::string _szInput)
 
 		if (szLast.size() - 8 < m_length)
 		{
+			cout << "当前长度为" << m_length << " ";
+			cout << "szLast.size() : " << szLast.size() << endl;
+			cout << "所发字节不全, 暂存下次再试" << endl;
 			break;
 		}
 
@@ -52,15 +56,19 @@ UserData* GameProtocol::raw2request(std::string _szInput)
 		pRet->m_msg_list.push_back(pMsg);
 
 		/* 弹出已经处理成功的报文 */
+		cout << "处理成功, 弹出" << 8 + m_length << "大小" << endl;
 		szLast.erase(0, 8 + m_length);
 
 	}
 
-	for (auto single : pRet->m_msg_list)
-	{
-		cout << "google std debug:" << endl;
-		cout << single->pMsg->Utf8DebugString() << endl;
-	}
+	/* 测试代码 */
+	
+		for (auto single : pRet->m_msg_list)
+		{
+			cout << "google std debug:" << endl;
+			cout << single->pMsg->Utf8DebugString() << endl;
+		}
+	
 
 	/* 测试 */
 	pb::Talk* pmsg = new pb::Talk();
@@ -84,6 +92,7 @@ std::string* GameProtocol::response2raw(UserData& _oUserData)
 
 	auto pret = new std::string();
 
+	/* 好像不 & 0xFF 也对 */
 	pret->push_back((iLength >> 0) & 0xFF);
 	pret->push_back((iLength >> 8) & 0xFF);
 	pret->push_back((iLength >> 16) & 0xFF);

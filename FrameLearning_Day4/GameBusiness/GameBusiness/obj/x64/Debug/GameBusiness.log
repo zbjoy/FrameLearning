@@ -4,36 +4,6 @@
   正在验证体系结构
   正在启动远程生成
   正在编译源:
-  GameProtocol.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(45,39): warning : comparison of integer expressions of different signedness: ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(45,39): warning :    45 |                 if (szLast.size() - 8 < m_length)
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(45,39): warning :       |                     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(83,34): warning : conversion from ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(83,34): warning :    83 |         iLength = MsgContent.size();
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(83,34): warning :       |                   ~~~~~~~~~~~~~~~^~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(87,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(87,40): warning :    87 |         pret->push_back((iLength >> 0) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(87,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(88,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(88,40): warning :    88 |         pret->push_back((iLength >> 8) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(88,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(89,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(89,41): warning :    89 |         pret->push_back((iLength >> 16) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(89,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(90,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(90,41): warning :    90 |         pret->push_back((iLength >> 24) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(90,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(92,35): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(92,35): warning :    92 |         pret->push_back((id >> 0) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(92,35): warning :       |                         ~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(93,35): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(93,35): warning :    93 |         pret->push_back((id >> 8) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(93,35): warning :       |                         ~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(94,36): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(94,36): warning :    94 |         pret->push_back((id >> 16) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(94,36): warning :       |                         ~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(95,36): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(95,36): warning :    95 |         pret->push_back((id >> 24) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\GameProtocol.cpp(95,36): warning :       |                         ~~~~~~~~~~~^~~~~~
+  main.cpp
   正在链接对象
   GameBusiness.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\FrameLearning_Day4\GameBusiness\GameBusiness\bin\x64\Debug\GameBusiness.out
