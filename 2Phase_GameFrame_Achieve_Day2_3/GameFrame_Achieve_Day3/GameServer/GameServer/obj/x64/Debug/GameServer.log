@@ -1,0 +1,12 @@
+﻿  正在验证源
+  正在将源远程复制到“8.141.80.68”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  GameProto.cpp
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(31,29): warning : comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(31,29): warning :    31 |                 if (iLength > szLast.size() - 8)
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(31,29): warning :       |                     ~~~~~~~~^~~~~~~~~~~~~~~~~~~
+  正在链接对象
+  GameServer.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\bin\x64\Debug\GameServer.out
