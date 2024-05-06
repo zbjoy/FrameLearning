@@ -1,5 +1,7 @@
 #include "GameProto.h"
 #include "GameMsg.h"
+#include "GameChannel.h"
+#include "GameRole.h"
 
 UserData* GameProto::raw2request(std::string _szInput)
 {
@@ -66,15 +68,35 @@ UserData* GameProto::raw2request(std::string _szInput)
 
 std::string* GameProto::response2raw(UserData& _oUserData)
 {
-    return nullptr;
+	GET_REF2DATA(GameMsg, gameMsg, _oUserData);
+	std::string strRet = gameMsg.serialize();
+
+	std::string* pRet = new std::string();
+
+	int iLength = strRet.size();
+	int iPid = gameMsg.enMsgType;
+
+	pRet->push_back((iLength >> 0) & 0xFF);
+	pRet->push_back((iLength >> 8) & 0xFF);
+	pRet->push_back((iLength >> 16) & 0xFF);
+	pRet->push_back((iLength >> 24) & 0xFF);
+
+	pRet->push_back((iPid >> 0) && 0xFF);
+	pRet->push_back((iPid >> 8) && 0xFF);
+	pRet->push_back((iPid >> 16) && 0xFF);
+	pRet->push_back((iPid >> 24) && 0xFF);
+
+	pRet->append(strRet);
+	
+	return &strRet;
 }
 
 Irole* GameProto::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
 {
-    return nullptr;
+	return m_role;
 }
 
 Ichannel* GameProto::GetMsgSender(BytesMsg& _oBytes)
 {
-    return nullptr;
+	return m_channel;
 }

@@ -1,5 +1,6 @@
 #include "GameChannel.h"
 #include "GameProto.h"
+#include "GameRole.h"
 
 AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)
 {
@@ -13,6 +14,10 @@ ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
 
     pChannel->m_proto = pProto;
     pProto->m_channel = pChannel;
+
+    GameRole* pRole = new GameRole();
+    pProto->m_role = pRole;
+    pRole->m_proto = pProto;
 
     return pChannel;
 }

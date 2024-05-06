@@ -2,6 +2,7 @@
 #include <zinx.h>
 
 class GameChannel;
+class GameRole;
 class GameProto :
     public Iprotocol
 {
@@ -14,5 +15,6 @@ public:
     Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
 
     GameChannel* m_channel;
+    GameRole* m_role;
 };
 
