@@ -16,6 +16,10 @@ class GameRole :
     std::string szName;
 
     GameMsg* CreateIDNameLogin();
+
+    GameMsg* CreateSrdPlayerPostion();
+
+    GameMsg* CreateSelfPostion();
 public:
     GameRole();
     // 通过 Irole 继承

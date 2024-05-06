@@ -59,7 +59,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
-    <RemoteRootDir>~/Frame_Learning/FrameLearning_GameServer/2Phase_GameFrame_Achieve_Day2_3/2GameFrame_Achieve_Day2</RemoteRootDir>
+    <RemoteRootDir>~/GameServer_Test/2GameServer_Phase2</RemoteRootDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
