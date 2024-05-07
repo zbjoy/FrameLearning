@@ -19,5 +19,8 @@ ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
     pProto->m_role = pRole;
     pRole->m_proto = pProto;
 
+    ZinxKernel::Zinx_Add_Proto(*pProto);
+    ZinxKernel::Zinx_Add_Role(*pRole);
+
     return pChannel;
 }

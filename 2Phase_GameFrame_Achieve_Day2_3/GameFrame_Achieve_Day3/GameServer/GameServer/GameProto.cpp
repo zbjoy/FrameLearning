@@ -2,6 +2,7 @@
 #include "GameMsg.h"
 #include "GameChannel.h"
 #include "GameRole.h"
+#include "msg.pb.h"
 
 UserData* GameProto::raw2request(std::string _szInput)
 {
@@ -50,31 +51,43 @@ UserData* GameProto::raw2request(std::string _szInput)
 
 		/* 调试代码 */
 		std::cout << "添加一个" << std::endl;
+		std::cout << "iPid is : " << iPid << std::endl;
 		std::string strstream = szLast.substr(8, iLength);
-		szLast.erase(0, 8 + iLength);
 		GameMsg* pGameMsg = new GameMsg((GameMsg::MSG_TYPE)iPid, strstream);
 		pMsg->m_msgs.push_back(pGameMsg);
+		szLast.erase(0, 8 + iLength);
 	}
     // GameMsg* pMsg = new GameMsg((GameMsg::MSG_TYPE)iPid, strstream);
 
 	/* 调试代码 */
-	for (auto single : pMsg->m_msgs)
-	{
-		std::cout << "enMsgType: " << single->enMsgType << std::endl;
-		std::cout << single->pMsg->Utf8DebugString();
-	}
+	//for (auto single : pMsg->m_msgs)
+	//{
+	//	std::cout << "enMsgType: " << single->enMsgType << std::endl;
+	//	std::cout << single->pMsg->Utf8DebugString();
+	//}
 	return pMsg;
 }
 
 std::string* GameProto::response2raw(UserData& _oUserData)
 {
 	GET_REF2DATA(GameMsg, gameMsg, _oUserData);
+
+	/* 调试代码 */
+	std::cout << "gameMsg.enMsgType is " << gameMsg.enMsgType << std::endl;
+	std::cout << "google debug:" << std::endl;
+	std::cout << gameMsg.pMsg->Utf8DebugString() << std::endl;
 	std::string strRet = gameMsg.serialize();
 
 	std::string* pRet = new std::string();
 
-	int iLength = strRet.size();
-	int iPid = gameMsg.enMsgType;
+	int iLength = 0;
+	int iPid = 0;
+	iLength = strRet.size();
+	iPid = gameMsg.enMsgType;
+	//int iLength = strRet.size();
+	//int iPid = gameMsg.enMsgType;
+	std::cout << "my end debug iLength : " << iLength << std::endl;
+	std::cout << "my end debug iPid : " << iPid << std::endl;
 
 	pRet->push_back((iLength >> 0) & 0xFF);
 	pRet->push_back((iLength >> 8) & 0xFF);
@@ -88,7 +101,8 @@ std::string* GameProto::response2raw(UserData& _oUserData)
 
 	pRet->append(strRet);
 	
-	return &strRet;
+	// return &strRet;
+	return pRet;
 }
 
 Irole* GameProto::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
@@ -98,5 +112,27 @@ Irole* GameProto::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
 
 Ichannel* GameProto::GetMsgSender(BytesMsg& _oBytes)
 {
+	std::string temp = _oBytes.szData;
+	int id = 0;
+	int length = 0;
+	length |= temp[0] << 0;
+	length |= temp[1] << 8;
+	length |= temp[2] << 16;
+	length |= temp[3] << 24;
+
+	id |= temp[4] << 0;
+	id |= temp[5] << 8;
+	id |= temp[6] << 16;
+	id |= temp[3] << 24;
+
+	// google::protobuf::Message* pMsg;
+
+	// pMsg->ParseFromString(temp.substr(8, temp.size() - 8));
+	// std::cout << "google haha: " << pMsg->Utf8DebugString();
+
+
+	std::cout << "length : " << length << std::endl;
+	std::cout << "id : " << id << std::endl;
+	std::cout << "向channel发送消息" << std::endl;
 	return m_channel;
 }

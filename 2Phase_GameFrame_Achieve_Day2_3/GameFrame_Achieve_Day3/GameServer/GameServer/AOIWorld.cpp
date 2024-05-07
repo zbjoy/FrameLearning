@@ -18,52 +18,54 @@ std::list<Player*> AOIWorld::GetSrdPlayer(Player* _player)
     std::list<Player*> ret_list;
     int x = (int)_player->GetX();
     int y = (int)_player->GetY();
-    int grid = (x - x_begin) / x_width + (y - y_begin) / y_width * x_count;
+    int grid = (x - x_begin) / x_width + ((y - y_begin) / y_width) * x_count;
 
-    int x_index = (x - x_begin) / x_width;
-    int y_index = (y - y_begin) / y_width;
+    // int x_index = (x - x_begin) / x_width;
+    // int y_index = (y - y_begin) / y_width;
+    int x_index = grid % x_count;
+    int y_index = grid / x_count;
 
     if (x_index > 0 && y_index > 0)
     {
         std::list<Player*>& cur_list = m_grids[grid - 1 - x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (y_index > 0)
     {
         std::list<Player*>& cur_list = m_grids[grid - x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (y_index > 0 && x_index < x_count - 1)
     {
         std::list<Player*>& cur_list = m_grids[grid + 1 - x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (x_index > 0)
     {
         std::list<Player*>& cur_list = m_grids[grid - 1].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     std::list<Player*>& cur_list = m_grids[grid].m_player_list;
-    ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+    ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     if (x_index < x_count - 1)
     {
         std::list<Player*>& cur_list = m_grids[grid + 1].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (x_index > 0 && y_index < y_count - 1)
     {
         std::list<Player*>& cur_list = m_grids[grid - 1 + x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (y_index < y_count - 1)
     {
         std::list<Player*>& cur_list = m_grids[grid + x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     if (x_index < x_count - 1 && y_index < y_count - 1)
     {
         std::list<Player*>& cur_list = m_grids[grid + 1 + x_count].m_player_list;
-        ret_list.insert(ret_list.end(), cur_list.begin(), cur_list.end());
+        ret_list.insert(ret_list.begin(), cur_list.begin(), cur_list.end());
     }
     return ret_list;
 }

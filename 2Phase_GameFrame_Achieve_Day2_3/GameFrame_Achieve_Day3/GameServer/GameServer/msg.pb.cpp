@@ -176,7 +176,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_msg_2eproto::offsets[] PROTOBU
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::SyncPlayer, players_),
+  PROTOBUF_FIELD_OFFSET(::pb::SyncPlayer, ps_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::Position, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -237,15 +237,15 @@ const char descriptor_table_protodef_msg_2eproto[] =
   "\n\tmsg.proto\022\002pb\"(\n\007SyncPid\022\013\n\003Pid\030\001 \001(\005\022"
   "\020\n\010UserName\030\002 \001(\t\"@\n\006Player\022\013\n\003Pid\030\001 \001(\005"
   "\022\027\n\001P\030\002 \001(\0132\014.pb.Position\022\020\n\010UserName\030\003 "
-  "\001(\t\")\n\nSyncPlayer\022\033\n\007Players\030\001 \003(\0132\n.pb."
-  "Player\"J\n\010Position\022\t\n\001X\030\001 \001(\002\022\t\n\001Y\030\002 \001(\002"
-  "\022\t\n\001Z\030\003 \001(\002\022\t\n\001V\030\004 \001(\002\022\022\n\nBloodValue\030\005 \001"
-  "(\005\".\n\013MovePackage\022\013\n\003Pid\030\001 \001(\005\022\022\n\nAction"
-  "Data\030\002 \001(\005\"\202\001\n\tBroadCast\022\013\n\003Pid\030\001 \001(\005\022\n\n"
-  "\002Tp\030\002 \001(\005\022\021\n\007Content\030\003 \001(\tH\000\022\031\n\001P\030\004 \001(\0132"
-  "\014.pb.PositionH\000\022\024\n\nActionData\030\005 \001(\005H\000\022\020\n"
-  "\010UserName\030\006 \001(\tB\006\n\004Data\"\027\n\004Talk\022\017\n\007Conte"
-  "nt\030\001 \001(\tb\006proto3"
+  "\001(\t\"$\n\nSyncPlayer\022\026\n\002ps\030\001 \003(\0132\n.pb.Playe"
+  "r\"J\n\010Position\022\t\n\001X\030\001 \001(\002\022\t\n\001Y\030\002 \001(\002\022\t\n\001Z"
+  "\030\003 \001(\002\022\t\n\001V\030\004 \001(\002\022\022\n\nBloodValue\030\005 \001(\005\".\n"
+  "\013MovePackage\022\013\n\003Pid\030\001 \001(\005\022\022\n\nActionData\030"
+  "\002 \001(\005\"\202\001\n\tBroadCast\022\013\n\003Pid\030\001 \001(\005\022\n\n\002Tp\030\002"
+  " \001(\005\022\021\n\007Content\030\003 \001(\tH\000\022\031\n\001P\030\004 \001(\0132\014.pb."
+  "PositionH\000\022\024\n\nActionData\030\005 \001(\005H\000\022\020\n\010User"
+  "Name\030\006 \001(\tB\006\n\004Data\"\027\n\004Talk\022\017\n\007Content\030\001 "
+  "\001(\tb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_msg_2eproto_deps[1] = {
 };
@@ -261,7 +261,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_msg
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_msg_2eproto_once;
 static bool descriptor_table_msg_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_msg_2eproto = {
-  &descriptor_table_msg_2eproto_initialized, descriptor_table_protodef_msg_2eproto, "msg.proto", 456,
+  &descriptor_table_msg_2eproto_initialized, descriptor_table_protodef_msg_2eproto, "msg.proto", 451,
   &descriptor_table_msg_2eproto_once, descriptor_table_msg_2eproto_sccs, descriptor_table_msg_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_msg_2eproto::offsets,
   file_level_metadata_msg_2eproto, 7, file_level_enum_descriptors_msg_2eproto, file_level_service_descriptors_msg_2eproto,
@@ -986,7 +986,7 @@ class SyncPlayer::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SyncPlayer::kPlayersFieldNumber;
+const int SyncPlayer::kPsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SyncPlayer::SyncPlayer()
@@ -997,7 +997,7 @@ SyncPlayer::SyncPlayer()
 SyncPlayer::SyncPlayer(const SyncPlayer& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
-      players_(from.players_) {
+      ps_(from.ps_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:pb.SyncPlayer)
 }
@@ -1029,7 +1029,7 @@ void SyncPlayer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  players_.Clear();
+  ps_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -1041,13 +1041,13 @@ const char* SyncPlayer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .pb.Player Players = 1;
+      // repeated .pb.Player ps = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(add_players(), ptr);
+            ptr = ctx->ParseMessage(add_ps(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
@@ -1083,11 +1083,11 @@ bool SyncPlayer::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .pb.Player Players = 1;
+      // repeated .pb.Player ps = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-                input, add_players()));
+                input, add_ps()));
         } else {
           goto handle_unusual;
         }
@@ -1121,12 +1121,12 @@ void SyncPlayer::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .pb.Player Players = 1;
+  // repeated .pb.Player ps = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->players_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->ps_size()); i < n; i++) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->players(static_cast<int>(i)),
+      this->ps(static_cast<int>(i)),
       output);
   }
 
@@ -1143,12 +1143,12 @@ void SyncPlayer::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .pb.Player Players = 1;
+  // repeated .pb.Player ps = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->players_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->ps_size()); i < n; i++) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->players(static_cast<int>(i)), target);
+        1, this->ps(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1172,14 +1172,14 @@ size_t SyncPlayer::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pb.Player Players = 1;
+  // repeated .pb.Player ps = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->players_size());
+    unsigned int count = static_cast<unsigned int>(this->ps_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          this->players(static_cast<int>(i)));
+          this->ps(static_cast<int>(i)));
     }
   }
 
@@ -1210,7 +1210,7 @@ void SyncPlayer::MergeFrom(const SyncPlayer& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  players_.MergeFrom(from.players_);
+  ps_.MergeFrom(from.ps_);
 }
 
 void SyncPlayer::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1238,7 +1238,7 @@ void SyncPlayer::Swap(SyncPlayer* other) {
 void SyncPlayer::InternalSwap(SyncPlayer* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&players_)->InternalSwap(CastToBase(&other->players_));
+  CastToBase(&ps_)->InternalSwap(CastToBase(&other->ps_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SyncPlayer::GetMetadata() const {

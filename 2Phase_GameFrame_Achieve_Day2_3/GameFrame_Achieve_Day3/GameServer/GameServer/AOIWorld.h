@@ -17,15 +17,15 @@ public:
 
 class AOIWorld
 {
-	int x_begin;
-	int y_begin;
-	int x_end;
-	int y_end;
-	int x_count;
-	int y_count;
+	int x_begin = 0;
+	int y_begin = 0;
+	int x_end = 0;
+	int y_end = 0;
+	int x_count = 0;
+	int y_count = 0;
 
-	int x_width;
-	int y_width;
+	int x_width = 0;
+	int y_width = 0;
 public:
 	AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_count, int _y_count);
 	std::vector<Grid> m_grids;

@@ -11,7 +11,7 @@ public:
     // 通过 ZinxTcpData 继承
     AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override;
 
-    GameProto* m_proto;
+    GameProto* m_proto = nullptr;
 
 };
 

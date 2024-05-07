@@ -487,24 +487,24 @@ class SyncPlayer :
 
   // accessors -------------------------------------------------------
 
-  // repeated .pb.Player Players = 1;
-  int players_size() const;
-  void clear_players();
-  static const int kPlayersFieldNumber = 1;
-  ::pb::Player* mutable_players(int index);
+  // repeated .pb.Player ps = 1;
+  int ps_size() const;
+  void clear_ps();
+  static const int kPsFieldNumber = 1;
+  ::pb::Player* mutable_ps(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player >*
-      mutable_players();
-  const ::pb::Player& players(int index) const;
-  ::pb::Player* add_players();
+      mutable_ps();
+  const ::pb::Player& ps(int index) const;
+  ::pb::Player* add_ps();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player >&
-      players() const;
+      ps() const;
 
   // @@protoc_insertion_point(class_scope:pb.SyncPlayer)
  private:
   class HasBitSetters;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player > players_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player > ps_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_msg_2eproto;
 };
@@ -1329,34 +1329,34 @@ inline void Player::set_allocated_username(std::string* username) {
 
 // SyncPlayer
 
-// repeated .pb.Player Players = 1;
-inline int SyncPlayer::players_size() const {
-  return players_.size();
+// repeated .pb.Player ps = 1;
+inline int SyncPlayer::ps_size() const {
+  return ps_.size();
 }
-inline void SyncPlayer::clear_players() {
-  players_.Clear();
+inline void SyncPlayer::clear_ps() {
+  ps_.Clear();
 }
-inline ::pb::Player* SyncPlayer::mutable_players(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.SyncPlayer.Players)
-  return players_.Mutable(index);
+inline ::pb::Player* SyncPlayer::mutable_ps(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.SyncPlayer.ps)
+  return ps_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player >*
-SyncPlayer::mutable_players() {
-  // @@protoc_insertion_point(field_mutable_list:pb.SyncPlayer.Players)
-  return &players_;
+SyncPlayer::mutable_ps() {
+  // @@protoc_insertion_point(field_mutable_list:pb.SyncPlayer.ps)
+  return &ps_;
 }
-inline const ::pb::Player& SyncPlayer::players(int index) const {
-  // @@protoc_insertion_point(field_get:pb.SyncPlayer.Players)
-  return players_.Get(index);
+inline const ::pb::Player& SyncPlayer::ps(int index) const {
+  // @@protoc_insertion_point(field_get:pb.SyncPlayer.ps)
+  return ps_.Get(index);
 }
-inline ::pb::Player* SyncPlayer::add_players() {
-  // @@protoc_insertion_point(field_add:pb.SyncPlayer.Players)
-  return players_.Add();
+inline ::pb::Player* SyncPlayer::add_ps() {
+  // @@protoc_insertion_point(field_add:pb.SyncPlayer.ps)
+  return ps_.Add();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Player >&
-SyncPlayer::players() const {
-  // @@protoc_insertion_point(field_list:pb.SyncPlayer.Players)
-  return players_;
+SyncPlayer::ps() const {
+  // @@protoc_insertion_point(field_list:pb.SyncPlayer.ps)
+  return ps_;
 }
 
 // -------------------------------------------------------------------

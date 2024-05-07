@@ -14,7 +14,7 @@ public:
     Irole* GetMsgProcessor(UserDataMsg& _oUserDataMsg) override;
     Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
 
-    GameChannel* m_channel;
-    GameRole* m_role;
+    GameChannel* m_channel = NULL;
+    GameRole* m_role = NULL;
 };
 
