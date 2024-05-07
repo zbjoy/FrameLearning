@@ -12,38 +12,5 @@ E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\G
 E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\AOIWorld.h(21,13): warning :    21 |         int y_begin;
 E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\AOIWorld.h(21,13): warning :       |             ^~~~~~~
 E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\AOIWorld.cpp(3,1): warning : when initialized here [-Wreorder]
-  GameChannel.cpp
-  GameMsg.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameMsg.h(20,7): warning : ‘GameMsg::enMsgType’ will be initialized after [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameMsg.h(20,7): warning :    20 |     } enMsgType;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameMsg.h(20,7): warning :       |       ^~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameMsg.h(10,32): warning : ‘google::protobuf::Message* GameMsg::pMsg’ [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameMsg.cpp(4,1): warning : when initialized here [-Wreorder]
-  GameProto.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(33,29): warning : comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(33,29): warning :    33 |                 if (iLength > szLast.size() - 8)
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(33,29): warning :       |                     ~~~~~~~~^~~~~~~~~~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(76,34): warning : conversion from ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(76,34): warning :    76 |         int iLength = strRet.size();
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(76,34): warning :       |                       ~~~~~~~~~~~^~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(79,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(79,40): warning :    79 |         pRet->push_back((iLength >> 0) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(79,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(80,40): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(80,40): warning :    80 |         pRet->push_back((iLength >> 8) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(80,40): warning :       |                         ~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(81,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(81,41): warning :    81 |         pRet->push_back((iLength >> 16) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(81,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(82,41): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(82,41): warning :    82 |         pRet->push_back((iLength >> 24) & 0xFF);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(82,41): warning :       |                         ~~~~~~~~~~~~~~~~^~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(91,16): warning : address of local variable ‘strRet’ returned [-Wreturn-local-addr]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(91,16): warning :    91 |         return &strRet;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(91,16): warning :       |                ^~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\GameProto.cpp(72,21): message : declared here
-  GameRole.cpp
-  main.cpp
-  msg.pb.cpp
   正在链接对象
   GameServer.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_3\GameFrame_Achieve_Day3\GameServer\GameServer\bin\x64\Debug\GameServer.out
