@@ -59,6 +59,16 @@ GameMsg* GameRole::CreateSelfPostion()
     return pRet;
 }
 
+GameMsg* GameRole::CreateIDNameLogoff()
+{
+    pb::SyncPid* pMsg = new pb::SyncPid();
+    pMsg->set_pid(iPid);
+    pMsg->set_username(szName);
+
+    GameMsg* pRet = new GameMsg(GameMsg::MSG_TYPE_LOGOFF_ID_NAME, pMsg);
+    return pRet;
+}
+
 GameRole::GameRole()
 {
     szName = "Tom";
@@ -80,7 +90,14 @@ bool GameRole::Init()
     {
         ZinxKernel::Zinx_SendOut(*CreateIDNameLogin(), *m_proto);
         ZinxKernel::Zinx_SendOut(*CreateSrdPlayerPostion(), *m_proto);
-        ZinxKernel::Zinx_SendOut(*CreateSelfPostion(), *m_proto);
+        auto srd_list = w.GetSrdPlayer(this);
+        for (auto single : srd_list)
+        {
+            // GameMsg* pmsg = CreateSelfPostion();
+            auto pRole = dynamic_cast<GameRole*>(single);
+			ZinxKernel::Zinx_SendOut(*CreateSelfPostion(), *pRole->m_proto);
+
+        }
     }
     return bRet;
 }
@@ -94,7 +111,8 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
     {
         std::cout << "type : " << single->enMsgType << std::endl;
         std::cout << single->pMsg->Utf8DebugString() << std::endl;
-        ZinxKernel::Zinx_SendOut(*single, *m_proto);
+        // ZinxKernel::Zinx_SendOut(*single, *m_proto);
+        // ZinxKernel::Zinx_SendOut(*CreateSrdPlayerPostion(), *m_proto);
 
     }
 
@@ -104,6 +122,16 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    /* 向周围玩家发送下线消息 */
+    auto srd_list = w.GetSrdPlayer(this);
+    for (auto single : srd_list)
+    {
+		// ZinxKernel::Zinx_SendOut(*CreateIDNameLogoff(), *m_proto);
+        auto pRole = dynamic_cast<GameRole*>(single);
+		ZinxKernel::Zinx_SendOut(*CreateIDNameLogoff(), *pRole->m_proto);
+        /* 如果加了这一句就成套娃了, 因为它会调用Fini函数 */
+		// ZinxKernel::Zinx_Del_Role(*this);
+    }
     w.Del_Player(this);
 }
 

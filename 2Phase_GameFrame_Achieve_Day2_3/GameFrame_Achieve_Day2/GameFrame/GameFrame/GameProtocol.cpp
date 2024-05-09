@@ -7,6 +7,16 @@
 
 using namespace std;
 
+GameProtocol::~GameProtocol()
+{
+	if (m_role != NULL)
+	{
+		ZinxKernel::Zinx_Del_Role(*m_role);
+		delete m_role;
+	}
+	// ZinxKernel::Zinx_Del_Proto(*this);
+}
+
 UserData* GameProtocol::raw2request(std::string _szInput)
 {
     // cout << "MyDebug: " << _szInput << endl;

@@ -20,6 +20,8 @@ class GameRole :
     GameMsg* CreateSrdPlayerPostion();
 
     GameMsg* CreateSelfPostion();
+
+    GameMsg* CreateIDNameLogoff();
 public:
     GameRole();
     // 通过 Irole 继承

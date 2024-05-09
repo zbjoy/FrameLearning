@@ -1,6 +1,15 @@
 #include "GameChannel.h"
 #include "GameRole.h"
 
+GameChannel::~GameChannel()
+{
+    if (m_proto != NULL)
+    {
+		ZinxKernel::Zinx_Del_Proto(*m_proto);
+		delete m_proto;
+    }
+}
+
 AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)
 {
     return m_proto;

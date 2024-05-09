@@ -8,6 +8,7 @@ class GameChannel :
 {
 public:
     GameChannel(int _fd) : ZinxTcpData(_fd) {};
+    ~GameChannel();
     // 通过 ZinxTcpData 继承
 
     /* 每一个channel对应一个protocol */
