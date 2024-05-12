@@ -1,0 +1,51 @@
+﻿  正在验证源
+  正在将源远程复制到“8.141.80.68”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  GameRole.cpp
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(26,9): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(26,9): warning :    26 |     x = _x;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(26,9): warning :       |         ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(27,9): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(27,9): warning :    27 |     y = _y;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(27,9): warning :       |         ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(28,9): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(28,9): warning :    28 |     z = _z;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(28,9): warning :       |         ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(29,9): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(29,9): warning :    29 |     v = _v;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(29,9): warning :       |         ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(55,24): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(55,24): warning :    55 |         new_pos->set_x(_x);
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(55,24): warning :       |                        ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(56,24): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(56,24): warning :    56 |         new_pos->set_y(_y);
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(56,24): warning :       |                        ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(57,24): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(57,24): warning :    57 |         new_pos->set_z(_z);
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(57,24): warning :       |                        ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(58,24): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(58,24): warning :    58 |         new_pos->set_v(_v);
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(58,24): warning :       |                        ^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(165,16): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(165,16): warning :   165 |     x = x + 10 * Pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(165,16): warning :       |             ~~~^~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(166,16): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(166,16): warning :   166 |     z = z + 10 * Pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(166,16): warning :       |             ~~~^~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,47): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,47): warning :   202 |                         ProcNewPos(pmsg_pos->x(), pmsg_pos->y(), pmsg_pos->z(), pmsg_pos->v());
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,47): warning :       |                                    ~~~~~~~~~~~^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,62): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,62): warning :   202 |                         ProcNewPos(pmsg_pos->x(), pmsg_pos->y(), pmsg_pos->z(), pmsg_pos->v());
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,62): warning :       |                                                   ~~~~~~~~~~~^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,77): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,77): warning :   202 |                         ProcNewPos(pmsg_pos->x(), pmsg_pos->y(), pmsg_pos->z(), pmsg_pos->v());
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,77): warning :       |                                                                  ~~~~~~~~~~~^~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,92): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,92): warning :   202 |                         ProcNewPos(pmsg_pos->x(), pmsg_pos->y(), pmsg_pos->z(), pmsg_pos->v());
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\GameRole.cpp(202,92): warning :       |                                                                                 ~~~~~~~~~~~^~
+  正在链接对象
+  GameServer.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\GameServer\GameServer\bin\x64\Debug\GameServer.out
