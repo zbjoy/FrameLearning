@@ -40,3 +40,15 @@ std::string GameMsg::serialize()
 	pMsg->SerializeToString(&retStr);
 	return retStr;
 }
+
+MultiMsg::~MultiMsg()
+{
+	for (auto single : m_msg_list)
+	{
+		if (single != NULL)
+		{
+			delete single;
+			single = NULL;
+		}
+	}
+}

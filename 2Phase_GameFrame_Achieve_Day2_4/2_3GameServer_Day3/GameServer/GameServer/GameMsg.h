@@ -7,6 +7,15 @@ class GameMsg :
     public UserData
 {
 public:
+    GameMsg() {};
+    ~GameMsg() 
+    {
+        if (pMsg != NULL)
+        {
+            delete pMsg;
+            pMsg = NULL;
+        }
+    }
     google::protobuf::Message* pMsg = nullptr;
     enum MSG_TYPE
     {
@@ -30,6 +39,8 @@ public:
 class MultiMsg : public UserData
 {
 public:
+    MultiMsg() {};
+    ~MultiMsg();
     std::list<GameMsg*> m_msg_list;
 };
 

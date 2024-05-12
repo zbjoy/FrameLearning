@@ -4,7 +4,9 @@
 #include "GameChannel.h"
 #include "msg.pb.h"
 #include <algorithm>
+#include <random>
 
+static std::default_random_engine random_engine(time(NULL));
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 
 void GameRole::ViewAppear(GameRole* pRole)
@@ -19,7 +21,7 @@ void GameRole::ViewLost(GameRole* pRole)
     ZinxKernel::Zinx_SendOut(*pRole->CreateIDNameLogoff(), *m_proto);
 }
 
-void GameRole::ProcNewPos(int _x, int _y, int _z, int _v)
+void GameRole::ProcNewPos(float _x, float _y, float _z, float _v)
 {
     auto s1 = world.GetSrdPlayerPosition(this);
     world.Del_Player(this);
@@ -155,6 +157,11 @@ GameRole::GameRole()
     z = 100;
 }
 
+GameRole::~GameRole()
+{
+    
+}
+
 bool GameRole::Init()
 {
     bool bRet = false;
@@ -162,8 +169,8 @@ bool GameRole::Init()
     Pid = m_proto->m_channel->GetFd();
 
     szName = szName + std::to_string(Pid);
-    x = x + 10 * Pid;
-    z = z + 10 * Pid;
+    x = x + random_engine() % 50;
+    z = z + random_engine() % 50;
 
     bRet = world.Add_Player(this);
 

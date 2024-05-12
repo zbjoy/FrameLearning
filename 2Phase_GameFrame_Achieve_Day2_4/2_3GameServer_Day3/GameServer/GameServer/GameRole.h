@@ -15,7 +15,7 @@ class GameRole :
     void ViewAppear(GameRole* pRole);
     void ViewLost(GameRole* pRole);
 
-    void ProcNewPos(int _x, int _y, int _z, int _v);
+    void ProcNewPos(float _x, float _y, float _z, float _v);
     void ProcChat(std::string content);
 
     GameMsg* CreateIDNameLogin();
@@ -25,6 +25,7 @@ class GameRole :
     
 public:
     GameRole();
+    ~GameRole();
     // 通过 Irole 继承
     bool Init() override;
     UserData* ProcMsg(UserData& _poUserData) override;
