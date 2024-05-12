@@ -5,9 +5,30 @@
 #include "msg.pb.h"
 #include <algorithm>
 #include <random>
+#include "ZinxTimer.h"
 
 static std::default_random_engine random_engine(time(NULL));
 static AOIWorld world(0, 400, 0, 400, 20, 20);
+
+class Exit_Timer : public TimerOutProc
+{
+public:
+    Exit_Timer()
+    {
+        //ZinxKernel::Zinx_Add_Channel(*new ZinxTimerChannel());
+    }
+    // 通过 TimerOutProc 继承
+    void Proc() override
+    {
+        ZinxKernel::Zinx_Exit();
+    }
+    int GetTimeSec() override
+    {
+        return 7;
+    }
+};
+
+Exit_Timer exit_Timer;
 
 void GameRole::ViewAppear(GameRole* pRole)
 {
@@ -164,6 +185,10 @@ GameRole::~GameRole()
 
 bool GameRole::Init()
 {
+    if (ZinxKernel::Zinx_GetAllRole().size() == 0)
+    {
+        TimerOutMng::getInstance().DelTask(&exit_Timer);
+    }
     bool bRet = false;
 
     Pid = m_proto->m_channel->GetFd();
@@ -241,6 +266,12 @@ void GameRole::Fini()
     {
         auto single_player = dynamic_cast<GameRole*>(single);
         ZinxKernel::Zinx_SendOut(*CreateIDNameLogoff(), *single_player->m_proto);
+    }
+
+    auto role_list = ZinxKernel::Zinx_GetAllRole();
+    if (role_list.size() == 0)
+    {
+        TimerOutMng::getInstance().AddTask(&exit_Timer);
     }
 }
 
