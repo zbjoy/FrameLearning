@@ -1,0 +1,1 @@
+g++ -o "/home/GameServer/test/Timer_Test_Myself/Timer_Review_Myself/bin/x64/Debug/Timer_Review_Myself.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/GameServer/test/Timer_Test_Myself/Timer_Review_Myself/obj/x64/Debug/main.o -lzinx

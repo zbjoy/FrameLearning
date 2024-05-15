@@ -10,10 +10,10 @@ public:
     GameMsg() {};
     ~GameMsg() 
     {
-        if (pMsg != NULL)
+        if (pMsg != nullptr)
         {
             delete pMsg;
-            pMsg = NULL;
+            pMsg = nullptr;
         }
     }
     google::protobuf::Message* pMsg = nullptr;

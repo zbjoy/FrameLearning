@@ -43,12 +43,12 @@ std::string GameMsg::serialize()
 
 MultiMsg::~MultiMsg()
 {
-	for (auto single : m_msg_list)
-	{
-		if (single != NULL)
-		{
-			delete single;
-			single = NULL;
-		}
-	}
+	//for (auto single : m_msg_list)
+	//{
+	//	if (single != NULL)
+	//	{
+	//		delete single;
+	//		single = NULL;
+	//	}
+	//}
 }
