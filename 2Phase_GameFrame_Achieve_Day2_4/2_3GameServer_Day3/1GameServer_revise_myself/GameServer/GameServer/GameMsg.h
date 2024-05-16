@@ -16,7 +16,7 @@ public:
         MSG_TYPE_NEW_POITION = 3,
         MSG_TYPE_BROADCAST = 200, // 一般为server2client
         MSG_TYPE_LOGOFF_ID_NAME = 201, // 一般为server2client
-        MSG_TYPE_SRD_POSITION = 202 // 一般为client2server
+        MSG_TYPE_SRD_POSITION = 202 // 一般为client2server, 在玩家上线时服务器会向玩家发送周围玩家的位置, 使用这个类型
     } enMsgType;
 
     GameMsg(MSG_TYPE _type, std::string _strstream);
