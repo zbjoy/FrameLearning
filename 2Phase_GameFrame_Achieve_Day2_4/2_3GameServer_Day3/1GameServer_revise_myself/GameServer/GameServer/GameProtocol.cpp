@@ -3,6 +3,16 @@
 #include "GameChannel.h"
 #include "GameMsg.h"
 
+GameProtocol::~GameProtocol()
+{
+    if (m_role != nullptr)
+    {
+		ZinxKernel::Zinx_Del_Role(*m_role);
+		delete m_role;
+		m_role = nullptr;
+    }
+}
+
 UserData* GameProtocol::raw2request(std::string _szInput)
 {
     /* 创建一个数据包存所有数据 */

@@ -7,7 +7,7 @@ class GameChannel :
 {
 public:
     GameChannel(int _fd) : ZinxTcpData(_fd) {};
-    ~GameChannel() {};
+    ~GameChannel();
     // 通过 ZinxTcpData 继承
     AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override;
 

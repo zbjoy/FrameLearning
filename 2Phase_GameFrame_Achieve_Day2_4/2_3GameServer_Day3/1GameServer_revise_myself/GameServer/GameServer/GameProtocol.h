@@ -7,6 +7,8 @@ class GameProtocol :
     public Iprotocol
 {
 public:
+    GameProtocol() {};
+    ~GameProtocol();
 
     // 通过 Iprotocol 继承
     UserData* raw2request(std::string _szInput) override;

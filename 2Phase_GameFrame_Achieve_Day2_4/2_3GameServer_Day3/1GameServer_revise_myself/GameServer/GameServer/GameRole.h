@@ -29,6 +29,10 @@ private:
     GameMsg* CreateLoginNameID();
     GameMsg* CreateSrdPlayersPosition();
     GameMsg* CreateSelfPosition();
+    GameMsg* CreateLogoffNameID();
+
+    void ViewAppear();
+    void ViewLoat();
 
     /* 处理聊天 */
     // void ProcChatMsg(pb::Talk* pTalk);

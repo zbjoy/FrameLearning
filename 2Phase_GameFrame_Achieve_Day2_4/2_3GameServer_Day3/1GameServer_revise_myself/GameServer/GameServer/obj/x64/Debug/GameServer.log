@@ -5,14 +5,14 @@
   正在启动远程生成
   正在编译源:
   GameRole.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(155,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(155,13): warning :   155 |     x = 100 + 3 * m_Pid;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(155,13): warning :       |         ~~~~^~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(156,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(156,13): warning :   156 |     z = 100 + 3 * m_Pid;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(156,13): warning :       |         ~~~~^~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(183,14): warning : unused variable ‘pRetMsg’ [-Wunused-variable]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(183,14): warning :   183 |     GameMsg* pRetMsg = nullptr;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(183,14): warning :       |              ^~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(174,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(174,13): warning :   174 |     x = 100 + 3 * m_Pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(174,13): warning :       |         ~~~~^~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(175,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(175,13): warning :   175 |     z = 100 + 3 * m_Pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(175,13): warning :       |         ~~~~^~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(202,14): warning : unused variable ‘pRetMsg’ [-Wunused-variable]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(202,14): warning :   202 |     GameMsg* pRetMsg = nullptr;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\GameRole.cpp(202,14): warning :       |              ^~~~~~~
   正在链接对象
   GameServer.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\2_3GameServer_Day3\1GameServer_revise_myself\GameServer\GameServer\bin\x64\Debug\GameServer.out

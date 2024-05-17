@@ -25,3 +25,13 @@ ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
 
     return pChannel;
 }
+
+GameChannel::~GameChannel()
+{
+    if (m_proto != nullptr)
+    {
+		ZinxKernel::Zinx_Del_Proto(*m_proto);
+		delete m_proto;
+		m_proto = nullptr;
+    }
+}

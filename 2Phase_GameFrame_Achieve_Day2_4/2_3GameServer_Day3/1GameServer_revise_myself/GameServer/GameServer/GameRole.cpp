@@ -58,6 +58,24 @@ GameMsg* GameRole::CreateSelfPosition()
     return pRetMsg;
 }
 
+GameMsg* GameRole::CreateLogoffNameID()
+{
+    pb::SyncPid* pSyncPid = new pb::SyncPid();
+    pSyncPid->set_pid(m_Pid);
+    pSyncPid->set_username(m_Name);
+
+    GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_LOGOFF_ID_NAME, pSyncPid);
+    return pRetMsg;
+}
+
+void GameRole::ViewAppear()
+{
+}
+
+void GameRole::ViewLoat()
+{
+}
+
 // void GameRole::ProcChatMsg(pb::Talk* pTalk)
 void GameRole::ProcChatMsg(google::protobuf::Message* pMsg)
 {
@@ -208,4 +226,11 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    std::list<Player*> player_list = world.GetSrdPlayersPosition(this);
+    world.Del_Player(this);
+    for (auto single : player_list)
+    {
+        auto pPlayer = dynamic_cast<GameRole*>(single);
+		ZinxKernel::Zinx_SendOut(*CreateLogoffNameID(), *(pPlayer->m_proto));
+    }
 }
