@@ -104,7 +104,7 @@ void GameRole::ProcChat(std::string content)
     for (auto single : player_list)
     {
         auto single_player = dynamic_cast<GameRole*>(single);
-                GameMsg* pmsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, c);
+		GameMsg* pmsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, c);
         ZinxKernel::Zinx_SendOut(*pmsg, *single_player->m_proto);
     }
 }
@@ -237,8 +237,7 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
         else if (single->enMsgType == GameMsg::MSG_TYPE_CHAT_CONTENT)
         {
 			 auto pmsg_talk = dynamic_cast<pb::Talk*>(single->pMsg);
-						 ProcChat(pmsg_talk->content());
-
+			 ProcChat(pmsg_talk->content());
         }
         /*switch (single->enMsgType)
         {

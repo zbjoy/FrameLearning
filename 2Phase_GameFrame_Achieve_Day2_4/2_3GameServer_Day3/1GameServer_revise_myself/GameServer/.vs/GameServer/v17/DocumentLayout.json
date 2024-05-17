@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameRole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameRole.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\AOIWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,24 +27,27 @@
       "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameProtocol.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameChannel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameMsg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameMsg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|C:\\USERS\\66426\\APPDATA\\LOCAL\\MICROSOFT\\LINUX\\HEADERCACHE\\1.0\\-1081544293\\USR\\INCLUDE\\WCHAR.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameProtocol.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F71B4D0E-1376-440E-ADF0-B163D2842FBD}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameChannel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,22 +67,22 @@
               "RelativeDocumentMoniker": "GameServer\\GameRole.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.cpp",
               "RelativeToolTip": "GameServer\\GameRole.cpp",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAABwAAAAoAAAA",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAAwIUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-15T14:10:26.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameRole.h",
-              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.h",
-              "RelativeDocumentMoniker": "GameServer\\GameRole.h",
-              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.h",
-              "RelativeToolTip": "GameServer\\GameRole.h",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-15T14:09:47.563Z",
+              "DocumentIndex": 6,
+              "Title": "GameChannel.cpp",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.cpp",
+              "RelativeDocumentMoniker": "GameServer\\GameChannel.cpp",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.cpp",
+              "RelativeToolTip": "GameServer\\GameChannel.cpp",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-15T13:57:54.98Z",
               "EditorCaption": ""
             },
             {
@@ -90,7 +93,7 @@
               "RelativeDocumentMoniker": "GameServer\\AOIWorld.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\AOIWorld.cpp",
               "RelativeToolTip": "GameServer\\AOIWorld.cpp",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAAA8AAAAxAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAiwB0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-16T12:27:34.576Z",
               "EditorCaption": ""
@@ -98,12 +101,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GameRole.h",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.h",
+              "RelativeDocumentMoniker": "GameServer\\GameRole.h",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameRole.h",
+              "RelativeToolTip": "GameServer\\GameRole.h",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-15T14:09:47.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "GameMsg.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.h",
               "RelativeDocumentMoniker": "GameServer\\GameMsg.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.h",
               "RelativeToolTip": "GameServer\\GameMsg.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAABWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-15T14:22:26.637Z",
               "EditorCaption": ""
@@ -116,9 +132,59 @@
               "RelativeDocumentMoniker": "GameServer\\AOIWorld.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\AOIWorld.h",
               "RelativeToolTip": "GameServer\\AOIWorld.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-16T12:16:38.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameProtocol.cpp",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.cpp",
+              "RelativeDocumentMoniker": "GameServer\\GameProtocol.cpp",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.cpp",
+              "RelativeToolTip": "GameServer\\GameProtocol.cpp",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-15T14:03:46.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GameMsg.cpp",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp",
+              "RelativeDocumentMoniker": "GameServer\\GameMsg.cpp",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp",
+              "RelativeToolTip": "GameServer\\GameMsg.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-15T14:44:09.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp",
+              "RelativeDocumentMoniker": "GameServer\\main.cpp",
+              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp",
+              "RelativeToolTip": "GameServer\\main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-15T13:51:57.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "wchar.h",
+              "DocumentMoniker": "C:\\Users\\66426\\AppData\\Local\\Microsoft\\Linux\\HeaderCache\\1.0\\-1081544293\\usr\\include\\wchar.h",
+              "ToolTip": "C:\\Users\\66426\\AppData\\Local\\Microsoft\\Linux\\HeaderCache\\1.0\\-1081544293\\usr\\include\\wchar.h",
+              "ViewState": "AQIAAJEAAAAAAAAAAAD4v5oAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-17T10:29:12.778Z",
               "EditorCaption": ""
             },
             {
@@ -129,61 +195,14 @@
               "RelativeDocumentMoniker": "GameServer\\GameProtocol.h",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.h",
               "RelativeToolTip": "GameServer\\GameProtocol.h",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABQAAAAWAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-15T14:03:22.106Z"
+              "WhenOpened": "2024-05-15T14:03:22.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameProtocol.cpp",
-              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.cpp",
-              "RelativeDocumentMoniker": "GameServer\\GameProtocol.cpp",
-              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameProtocol.cpp",
-              "RelativeToolTip": "GameServer\\GameProtocol.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC8AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-15T14:03:46.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "main.cpp",
-              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp",
-              "RelativeDocumentMoniker": "GameServer\\main.cpp",
-              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\main.cpp",
-              "RelativeToolTip": "GameServer\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-15T13:51:57.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameMsg.cpp",
-              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp",
-              "RelativeDocumentMoniker": "GameServer\\GameMsg.cpp",
-              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameMsg.cpp",
-              "RelativeToolTip": "GameServer\\GameMsg.cpp",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAACwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-15T14:44:09.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GameChannel.cpp",
-              "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.cpp",
-              "RelativeDocumentMoniker": "GameServer\\GameChannel.cpp",
-              "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.cpp",
-              "RelativeToolTip": "GameServer\\GameChannel.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-15T13:57:54.98Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "GameChannel.h",
               "DocumentMoniker": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\1GameServer_revise_myself\\GameServer\\GameServer\\GameChannel.h",
               "RelativeDocumentMoniker": "GameServer\\GameChannel.h",

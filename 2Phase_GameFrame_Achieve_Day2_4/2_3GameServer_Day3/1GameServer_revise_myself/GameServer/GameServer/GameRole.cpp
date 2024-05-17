@@ -2,6 +2,7 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
+// #include "AOIWorld.h"
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 
@@ -57,6 +58,84 @@ GameMsg* GameRole::CreateSelfPosition()
     return pRetMsg;
 }
 
+// void GameRole::ProcChatMsg(pb::Talk* pTalk)
+void GameRole::ProcChatMsg(google::protobuf::Message* pMsg)
+{
+    pb::Talk* pTalk = dynamic_cast<pb::Talk*>(pMsg);
+    std::string content = pTalk->content();
+
+    std::cout << "GameRole::ProcChatMsg(): google debug:" << std::endl;
+    std::cout << pTalk->Utf8DebugString();
+
+    auto pGive = new pb::BroadCast();
+    pGive->set_pid(m_Pid);
+    pGive->set_username(m_Name);
+    /* 聊天 */
+    pGive->set_tp(1);
+    pGive->set_content(content);
+
+    /* 第一次不小心发成 */
+    // GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_CHAT_CONTENT, pGive);
+    // GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pGive);
+
+    // ZinxKernel::Zinx_SendOut(*pGameMsg , *m_proto);
+    auto player_list = world.GetSrdPlayersPosition(this);
+    std::cout << "Pid: " << m_Pid << " 有" << player_list.size() << "个人在周围" << std::endl;
+    std::cout << pGive->Utf8DebugString();
+    for (auto single : player_list)
+    {
+        /* 为什么必须要把 pGameMsg new在 for 里面, 在外面服务器一发消息就挂了*/
+		GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pGive);
+        /*
+            在 ZinxKernel::Zinx_SendOut() 中, 发完之后应该会 delete 掉pGameMsg, 再发就是空指针了 
+        */
+        auto pPlayer = dynamic_cast<GameRole*>(single);
+        std::cout << "Pid: " << pPlayer->m_Pid << std::endl;
+        std::cout << "姓名: " << pPlayer->m_Name << std::endl;;
+        //if (pPlayer == NULL)
+        //{
+            //std::cout << "pPlayer == NULL" << std::endl;
+        //}
+        //if (pPlayer->m_proto == NULL)
+        //{
+        //    std::cout << "pPlayer->m_proto == NULL" << std::endl;
+        //}
+        ZinxKernel::Zinx_SendOut(*pGameMsg, *pPlayer->m_proto);
+    }
+}
+
+void GameRole::ProcNewPos(google::protobuf::Message* pMsg)
+{
+    /* 处理新位置 */
+    std::cout << m_Name << "移动了" << std::endl;
+    pb::Position* pPos = dynamic_cast<pb::Position*>(pMsg);
+
+    x = pPos->x();
+    y = pPos->y();
+    z = pPos->z();
+    v = pPos->v();
+
+    pb::BroadCast* pBroadCast = new pb::BroadCast();
+    pBroadCast->set_pid(m_Pid);
+    pBroadCast->set_username(m_Name);
+    pBroadCast->set_tp(2);
+    auto p = pBroadCast->mutable_p();
+    p->set_x(x);
+    p->set_y(y);
+    p->set_z(z);
+    p->set_v(v);
+
+
+    for (auto single : world.GetSrdPlayersPosition(this))
+    {
+        /* 应该发pBroadCast, 发成了pPos */
+		auto pGameMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pBroadCast);
+        auto pPlayer = dynamic_cast<GameRole*>(single);
+        std::cout << "向" << pPlayer->m_Name << "发送了移动消息" << std::endl;
+        ZinxKernel::Zinx_SendOut(*pGameMsg, *pPlayer->m_proto);
+    }
+}
+
 float GameRole::GetX()
 {
     return x;
@@ -74,10 +153,14 @@ bool GameRole::Init()
     m_Name = std::string("Tom") + std::to_string(m_Pid);
 
     /* 初始化位置 */
-    x = 100 + 10 * m_Pid;
-    z = 100 + 10 * m_Pid;
+    x = 100 + 3 * m_Pid;
+    z = 100 + 3 * m_Pid;
 
     world.Add_Player(this);
+
+    std::cout << "玩家: " << m_Name << "Pid: " << m_Pid << std::endl;
+    std::cout << "x: " << x << " y: " << z << std::endl;
+    std::cout << "应在的grid: " << ((int)GetX() - 0) / 20 + ((int)GetY() - 0) / 20 * 20 << std::endl;
 
     /* 发送登录时的姓名和Pid给客户端 */
     ZinxKernel::Zinx_SendOut(*CreateLoginNameID(), *m_proto);
@@ -100,6 +183,25 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 {
     GameMsg* pRetMsg = nullptr;
     GET_REF2DATA(MultiMsg, multiMsg, _poUserData);
+
+    /* 同步消息 */
+    for (auto single : multiMsg.m_msg_list)
+    {
+        google::protobuf::Message* pMsg = single->pMsg;
+        std::cout << "GameRole::ProcMsg(): google debug:" << std::endl;
+        std::cout << pMsg->Utf8DebugString();
+        switch (single->enMsgType)
+        {
+        case GameMsg::MSG_TYPE_NEW_POITION:
+            ProcNewPos(pMsg);
+            break;
+        case GameMsg::MSG_TYPE_CHAT_CONTENT:
+            ProcChatMsg(pMsg);
+            break;
+        default:
+            break;
+        }
+    }
 
     return NULL;
 }

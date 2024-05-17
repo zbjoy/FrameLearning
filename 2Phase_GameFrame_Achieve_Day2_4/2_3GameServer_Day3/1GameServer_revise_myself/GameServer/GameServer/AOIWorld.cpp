@@ -1,6 +1,8 @@
 #include "AOIWorld.h"
 #include <iostream>
 
+int AOIWorld::num = 0;
+
 AOIWorld::AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_count, int _y_count) : x_begin(_x_begin), x_end(_x_end), y_begin(_y_begin), y_end(_y_end), x_count(_x_count), y_count(_y_count)
 {
 	x_width = (x_end - x_begin) / x_count;
@@ -15,12 +17,18 @@ AOIWorld::AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_co
 
 std::list<Player*> AOIWorld::GetSrdPlayersPosition(Player* _player)
 {
+	std::cout << "AOIWorld::GetSrdPlayersPosition" << std::endl;
+	std::cout << "当前有" << num << "个" << std::endl;
 	std::list<Player*> retList;
 	/* --------------------------------------------------------- */
-	int x_index = ((int)_player->GetX() - x_begin) / x_width;
-	int y_index = ((int)_player->GetY() - y_begin) / y_width;
+	//int x_index = ((int)_player->GetX() - x_begin) / x_width;
+	//int y_index = ((int)_player->GetY() - y_begin) / y_width;
 
-	int grid = x_index + y_index * x_count;
+	//int grid = x_index + y_index * x_count;
+	int grid = ((int)_player->GetX() - x_begin) / x_width + ((int)_player->GetY() - y_begin) / y_width * x_count;
+
+	int x_index = grid % x_count;
+	int y_index = grid / x_count;
 	/* --------------------------------------------------------- */
 
 
@@ -76,12 +84,13 @@ bool AOIWorld::Add_Player(Player* _player)
 {
 	bool bRet = false;
 
-	int grid = -1;
+	// int grid = -1;
 
 	/* --------------------------------------------------------- */
-	int x = ((int)_player->GetX() - x_begin) / x_width;
-	int y = ((int)_player->GetY() - y_begin) / y_width;
-	grid = x + y * x_count;
+	//int x = ((int)_player->GetX() - x_begin) / x_width;
+	//int y = ((int)_player->GetY() - y_begin) / y_width;
+	//grid = x + y * x_count;
+	int grid = ((int)_player->GetX() - x_begin) / x_width + ((int)_player->GetY() - y_begin) / y_width * x_count;
 	/* --------------------------------------------------------- */
 
 
@@ -92,8 +101,12 @@ bool AOIWorld::Add_Player(Player* _player)
 	}
 	else
 	{
-		m_grids[x + y * x_count].m_player_list.push_back(_player);
+		// m_grids[x + y * x_count].m_player_list.push_back(_player);
+		m_grids[grid].m_player_list.push_back(_player);
 		bRet = true;
+
+		std::cout << "添加了一个player(当前为:" << ++num << "个)......" << std::endl;
+		std::cout << "当前添加的grid: " << grid << std::endl;
 	}
 
 	return bRet;

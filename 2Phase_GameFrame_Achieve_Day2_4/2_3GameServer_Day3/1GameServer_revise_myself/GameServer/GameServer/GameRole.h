@@ -1,6 +1,7 @@
 #pragma once
 #include <zinx.h>
 #include "AOIWorld.h"
+#include "msg.pb.h"
 
 class GameProtocol;
 class GameMsg;
@@ -28,6 +29,11 @@ private:
     GameMsg* CreateLoginNameID();
     GameMsg* CreateSrdPlayersPosition();
     GameMsg* CreateSelfPosition();
+
+    /* 处理聊天 */
+    // void ProcChatMsg(pb::Talk* pTalk);
+    void ProcChatMsg(google::protobuf::Message* pMsg);
+    void ProcNewPos(google::protobuf::Message* pMsg);
 
     // 通过 Player 继承
     float GetX() override;
