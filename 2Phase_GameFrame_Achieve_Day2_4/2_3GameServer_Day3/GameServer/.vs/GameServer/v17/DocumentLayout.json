@@ -82,8 +82,7 @@
               "RelativeToolTip": "GameServer\\GameProtocol.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAsAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T02:21:50.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T02:21:50.387Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "GameServer\\GameRole.h",
               "ViewState": "AQIAABoAAAAAAAAAAAAAAB8AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T01:59:45.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T01:59:45.353Z"
             },
             {
               "$type": "Document",
@@ -106,7 +104,7 @@
               "RelativeDocumentMoniker": "GameServer\\GameRole.cpp",
               "ToolTip": "E:\\code\\FrameLearning_GameServer\\FrameLearning\\2Phase_GameFrame_Achieve_Day2_4\\2_3GameServer_Day3\\GameServer\\GameServer\\GameRole.cpp",
               "RelativeToolTip": "GameServer\\GameRole.cpp",
-              "ViewState": "AQIAAP4AAAAAAAAAAADwvwMBAAATAAAA",
+              "ViewState": "AQIAAKMAAAAAAAAAAADwvzQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-12T01:59:53.074Z",
               "EditorCaption": ""
@@ -121,8 +119,7 @@
               "RelativeToolTip": "GameServer\\GameProtocol.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T02:22:23.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T02:22:23.09Z"
             },
             {
               "$type": "Document",
@@ -134,8 +131,7 @@
               "RelativeToolTip": "GameServer\\GameChannel.cpp",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T02:23:49.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T02:23:49.955Z"
             },
             {
               "$type": "Document",
@@ -147,8 +143,7 @@
               "RelativeToolTip": "GameServer\\GameChannel.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T02:23:38.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T02:23:38.337Z"
             },
             {
               "$type": "Document",

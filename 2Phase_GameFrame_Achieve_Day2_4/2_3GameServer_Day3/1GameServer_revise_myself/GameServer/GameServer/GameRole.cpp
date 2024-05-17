@@ -68,12 +68,18 @@ GameMsg* GameRole::CreateLogoffNameID()
     return pRetMsg;
 }
 
-void GameRole::ViewAppear()
+void GameRole::ViewAppear(GameRole* _pRole)
 {
+    // ZinxKernel::Zinx_SendOut(*CreateLoginNameID(), *_pRole->m_proto);
+    ZinxKernel::Zinx_SendOut(*CreateSelfPosition(), *_pRole->m_proto);
+    // ZinxKernel::Zinx_SendOut(*_pRole->CreateLoginNameID(), *m_proto);
+    ZinxKernel::Zinx_SendOut(*_pRole->CreateSelfPosition(), *m_proto);
 }
 
-void GameRole::ViewLoat()
+void GameRole::ViewLost(GameRole* _pRole)
 {
+    ZinxKernel::Zinx_SendOut(*CreateLogoffNameID(), *_pRole->m_proto);
+    ZinxKernel::Zinx_SendOut(*_pRole->CreateLogoffNameID(), *m_proto);
 }
 
 // void GameRole::ProcChatMsg(pb::Talk* pTalk)
@@ -126,12 +132,40 @@ void GameRole::ProcNewPos(google::protobuf::Message* pMsg)
 {
     /* 处理新位置 */
     std::cout << m_Name << "移动了" << std::endl;
+
+    /* 对比旧位置得到要消失的视野 */
+    auto s1 = world.GetSrdPlayersPosition(this);
+    
     pb::Position* pPos = dynamic_cast<pb::Position*>(pMsg);
 
+    world.Del_Player(this);
     x = pPos->x();
     y = pPos->y();
     z = pPos->z();
     v = pPos->v();
+
+    world.Add_Player(this);
+
+    /* 获得新位置 */
+    auto s2 = world.GetSrdPlayersPosition(this);
+
+    /* 要消失的 */
+    for (auto single : s1)
+    {
+        if (std::find(s2.begin(), s2.end(), single) == s2.end())
+        {
+            ViewLost(dynamic_cast<GameRole*>(single));
+        }
+    }
+
+    /* 要出现的 */
+    for (auto single : s2)
+    {
+        if (std::find(s1.begin(), s1.end(), single) == s1.end())
+        {
+            ViewAppear(dynamic_cast<GameRole*>(single));
+        }
+    }
 
     pb::BroadCast* pBroadCast = new pb::BroadCast();
     pBroadCast->set_pid(m_Pid);

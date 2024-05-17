@@ -31,8 +31,8 @@ private:
     GameMsg* CreateSelfPosition();
     GameMsg* CreateLogoffNameID();
 
-    void ViewAppear();
-    void ViewLoat();
+    void ViewAppear(GameRole* _pRole);
+    void ViewLost(GameRole* _pRole);
 
     /* 处理聊天 */
     // void ProcChatMsg(pb::Talk* pTalk);
