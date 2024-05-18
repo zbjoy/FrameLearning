@@ -4,11 +4,27 @@
 
 using namespace std;
 
-int main(void)
+class SayHello : public TimerProc
+{
+public:
+	// 通过 TimerProc 继承
+	void Proc() override
+	{
+		cout << "Hello" << endl;
+	}
+	int GetTimeSec() override
+	{
+		return 2;
+	}
+};
+
+int main()
 {
 	ZinxKernel::ZinxKernelInit();
 
-	ZinxKernel::Zinx_Add_Channel(*(new ZinxTimer()));
+	ZinxKernel::Zinx_Add_Channel(*new TimerChannel());
+
+	TimerMng::GetInstance()->Add_Task(new SayHello);
 
 	ZinxKernel::Zinx_Run();
 	ZinxKernel::ZinxKernelFini();
