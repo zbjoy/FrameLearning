@@ -2,11 +2,25 @@
 #include <zinx.h>
 #include <list>
 #include "msg.pb.h"
+#include <string.h>
 
 class GameMsg :
     public UserData
 {
 public:
+    GameMsg() {};
+    /* 重写拷贝构造, 不然GameProtocol中的response2raw弄过来的就是空的了 */
+    GameMsg(const GameMsg& _gameMsg);
+    /* 重写赋值构造 */
+    GameMsg& operator=(const GameMsg& _gameMsg);
+    //~GameMsg()
+    //{
+    //    if (pMsg != nullptr)
+    //    {
+    //        delete pMsg;
+    //        pMsg = nullptr;
+    //    }
+    //}
     google::protobuf::Message* pMsg = nullptr;
 
     enum MSG_TYPE
@@ -30,6 +44,18 @@ public:
 class MultiMsg : public UserData
 {
 public:
+    MultiMsg() {};
+    ~MultiMsg()
+    {
+        for (auto single : m_msg_list)
+        {
+            if (single != nullptr)
+            {
+                delete single;
+            }
+        }
+        m_msg_list.clear();
+    }
     std::list<GameMsg*> m_msg_list;
 };
 

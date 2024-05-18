@@ -3,7 +3,23 @@
 #include "GameChannel.h"
 #include "GameMsg.h"
 #include <random>
+#include "ZinxTimer.h"
 // #include "AOIWorld.h"
+
+/* 添加一个时间类来管理在没有玩家时服务器的退出 */
+class GameTimer : public TimerOutProc
+{
+public:
+    // 通过 TimerOutProc 继承
+    void Proc() override
+    {
+        ZinxKernel::Zinx_Exit();
+    }
+    int GetTimeSec() override
+    {
+        return 7;
+    }
+} *exit_Timer = new GameTimer();
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 static std::default_random_engine random_engine(time(NULL));
@@ -206,6 +222,13 @@ float GameRole::GetY()
 
 bool GameRole::Init()
 {
+    auto roles = ZinxKernel::Zinx_GetAllRole();
+    std::cout << "(Init)当前有" << roles.size() << "个玩家" << std::endl;
+    if (roles.size() == 0)
+    {
+        TimerOutMng::getInstance().DelTask(exit_Timer);
+    }
+
     m_Pid = m_proto->m_channel->GetFd();
     // m_Name = "Tom" + m_Pid 是错的, 但不知道为什么
     m_Name = std::string("Tom") + std::to_string(m_Pid);
@@ -271,6 +294,14 @@ void GameRole::Fini()
 {
     std::list<Player*> player_list = world.GetSrdPlayersPosition(this);
     world.Del_Player(this);
+
+    auto roles = ZinxKernel::Zinx_GetAllRole();
+    std::cout << "(Fini)当前有" << roles.size() << "个玩家" << std::endl;
+    if (roles.size() == 0)
+    {
+        TimerOutMng::getInstance().AddTask(exit_Timer);
+    }
+
     for (auto single : player_list)
     {
         auto pPlayer = dynamic_cast<GameRole*>(single);
