@@ -2,9 +2,11 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
+#include <random>
 // #include "AOIWorld.h"
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
+static std::default_random_engine random_engine(time(NULL));
 
 GameMsg* GameRole::CreateLoginNameID()
 {
@@ -154,7 +156,9 @@ void GameRole::ProcNewPos(google::protobuf::Message* pMsg)
     {
         if (std::find(s2.begin(), s2.end(), single) == s2.end())
         {
-            ViewLost(dynamic_cast<GameRole*>(single));
+            auto temp = dynamic_cast<GameRole*>(single);
+            std::cout << "Pid: " << temp->m_Pid << "消失了" << std::endl;
+			ViewLost(temp);
         }
     }
 
@@ -163,7 +167,9 @@ void GameRole::ProcNewPos(google::protobuf::Message* pMsg)
     {
         if (std::find(s1.begin(), s1.end(), single) == s1.end())
         {
-            ViewAppear(dynamic_cast<GameRole*>(single));
+            auto temp = dynamic_cast<GameRole*>(single);
+            std::cout << "Pid: " << temp->m_Pid << "出现了" << std::endl;
+            ViewAppear(temp);
         }
     }
 
@@ -205,8 +211,11 @@ bool GameRole::Init()
     m_Name = std::string("Tom") + std::to_string(m_Pid);
 
     /* 初始化位置 */
-    x = 100 + 3 * m_Pid;
-    z = 100 + 3 * m_Pid;
+    // x = 100 + 3 * m_Pid;
+    // z = 100 + 3 * m_Pid;
+    /* 设置为随机出生 */
+    x = 100 + random_engine() % 50;
+    z = 100 + random_engine() % 50;
 
     world.Add_Player(this);
 

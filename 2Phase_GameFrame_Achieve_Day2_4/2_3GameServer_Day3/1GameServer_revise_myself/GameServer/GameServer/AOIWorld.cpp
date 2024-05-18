@@ -1,7 +1,7 @@
 #include "AOIWorld.h"
 #include <iostream>
 
-int AOIWorld::num = 0;
+// int AOIWorld::num = 0;
 
 AOIWorld::AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_count, int _y_count) : x_begin(_x_begin), x_end(_x_end), y_begin(_y_begin), y_end(_y_end), x_count(_x_count), y_count(_y_count)
 {
@@ -15,10 +15,11 @@ AOIWorld::AOIWorld(int _x_begin, int _x_end, int _y_begin, int _y_end, int _x_co
 	}
 }
 
+/* 在粘贴的时候没有该掉m_grids[] 中的位置 */
 std::list<Player*> AOIWorld::GetSrdPlayersPosition(Player* _player)
 {
-	std::cout << "AOIWorld::GetSrdPlayersPosition" << std::endl;
-	std::cout << "当前有" << num << "个" << std::endl;
+	// std::cout << "AOIWorld::GetSrdPlayersPosition" << std::endl;
+	// std::cout << "当前有" << num << "个" << std::endl;
 	std::list<Player*> retList;
 	/* --------------------------------------------------------- */
 	//int x_index = ((int)_player->GetX() - x_begin) / x_width;
@@ -58,22 +59,26 @@ std::list<Player*> AOIWorld::GetSrdPlayersPosition(Player* _player)
 	
 	if (x_index < x_count - 1)
 	{
-		std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		//std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		std::list<Player*> temp = m_grids[grid + 1].m_player_list;
 		retList.insert(retList.end(), temp.begin(), temp.end());
 	}
 	if (x_index > 0 && y_index < y_count - 1)
 	{
-		std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		// std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		std::list<Player*> temp = m_grids[grid - 1 + x_count].m_player_list;
 		retList.insert(retList.end(), temp.begin(), temp.end());
 	}
 	if (y_index < y_count - 1)
 	{
-		std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		// std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		std::list<Player*> temp = m_grids[grid + x_count].m_player_list;
 		retList.insert(retList.end(), temp.begin(), temp.end());
 	}
 	if (x_index < x_count - 1 && y_index > y_count - 1)
 	{
-		std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		// std::list<Player*> temp = m_grids[grid - 1].m_player_list;
+		std::list<Player*> temp = m_grids[grid + 1 + x_count].m_player_list;
 		retList.insert(retList.end(), temp.begin(), temp.end());
 	}
 	
@@ -105,7 +110,7 @@ bool AOIWorld::Add_Player(Player* _player)
 		m_grids[grid].m_player_list.push_back(_player);
 		bRet = true;
 
-		std::cout << "添加了一个player(当前为:" << ++num << "个)......" << std::endl;
+		// std::cout << "添加了一个player(当前为:" << ++num << "个)......" << std::endl;
 		std::cout << "当前添加的grid: " << grid << std::endl;
 	}
 

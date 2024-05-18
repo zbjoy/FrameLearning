@@ -18,7 +18,7 @@ public:
 
 class AOIWorld
 {
-	static int num;
+	// static int num;
 
 	int x_begin;
 	int x_end;
