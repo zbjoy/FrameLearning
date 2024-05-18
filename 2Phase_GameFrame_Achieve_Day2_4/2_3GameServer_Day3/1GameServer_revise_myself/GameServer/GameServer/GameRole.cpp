@@ -4,6 +4,7 @@
 #include "GameMsg.h"
 #include <random>
 #include "ZinxTimer.h"
+#include "RandomName.h"
 // #include "AOIWorld.h"
 
 /* 添加一个时间类来管理在没有玩家时服务器的退出 */
@@ -23,6 +24,8 @@ public:
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 static std::default_random_engine random_engine(time(NULL));
+/* 不可以写成静态, 不然main函数找不到, 或者直接把LoadName放在构造中 */
+RandomName randomName;
 
 GameMsg* GameRole::CreateLoginNameID()
 {
@@ -231,7 +234,9 @@ bool GameRole::Init()
 
     m_Pid = m_proto->m_channel->GetFd();
     // m_Name = "Tom" + m_Pid 是错的, 但不知道为什么
-    m_Name = std::string("Tom") + std::to_string(m_Pid);
+    // m_Name = std::string("Tom") + std::to_string(m_Pid);
+    /* 改为随机姓名 */
+    m_Name = randomName.GetName();
 
     /* 初始化位置 */
     // x = 100 + 3 * m_Pid;
@@ -294,6 +299,10 @@ void GameRole::Fini()
 {
     std::list<Player*> player_list = world.GetSrdPlayersPosition(this);
     world.Del_Player(this);
+
+    /* 回收姓名 */
+    std::cout << "回收姓名: " << m_Name << std::endl;
+    randomName.ReleaseName(m_Name);
 
     auto roles = ZinxKernel::Zinx_GetAllRole();
     std::cout << "(Fini)当前有" << roles.size() << "个玩家" << std::endl;

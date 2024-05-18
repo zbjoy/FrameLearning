@@ -2,6 +2,7 @@
 #include <zinx.h>
 #include "GameChannel.h"
 #include "ZinxTimer.h"
+#include "RandomName.h"
 
 /*
 	bug(2024_5_17): 当有两个玩家Tom5(先进入游戏), Tom6(后进入游戏) 在两个玩家位置较远的时候, Tom6发的消息Tom5可以看到, 但是Tom5发的Tom6看不到
@@ -13,8 +14,12 @@
 
 using namespace std;
 
+extern RandomName randomName;
+
 int main(void)
 {
+	randomName.LoadName();
+
 	ZinxKernel::ZinxKernelInit();
 
 	ZinxKernel::Zinx_Add_Channel(*new ZinxTCPListen(8899, new GameConnFact()));
