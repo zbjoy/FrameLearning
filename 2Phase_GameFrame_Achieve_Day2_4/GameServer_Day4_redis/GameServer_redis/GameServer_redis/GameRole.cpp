@@ -6,6 +6,21 @@
 #include <iostream>
 #include <string.h>
 #include <random>
+#include "TimerChannel.h"
+
+class Exit_Game : public TimerProc
+{
+public:
+    // 通过 TimerProc 继承
+    void Proc() override
+    {
+        ZinxKernel::Zinx_Exit();
+    }
+    int GetTimerSec() override
+    {
+        return 7;
+    }
+} exit_Game;
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 static std::default_random_engine random_engine(time(NULL));
@@ -13,6 +28,12 @@ RandomName randomName;
 
 bool GameRole::Init()
 {
+    auto getnum_players = ZinxKernel::Zinx_GetAllRole();
+    if (getnum_players.size() == 0)
+    {
+        TimerMng::GetInstance()->Del_Task(&exit_Game);
+    }
+
     m_pid = m_protocol->m_channel->GetFd();
     // m_Name = std::string("Tom") + std::to_string(m_pid);
     /* 从随机姓名池任意取一个 */
@@ -67,6 +88,11 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    auto get = ZinxKernel::Zinx_GetAllRole();
+    if (get.size() == 0)
+    {
+        TimerMng::GetInstance()->Add_Task(&exit_Game);
+    }
     // ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *m_protocol);
     auto player_list = world.GetSrdPlayerPosition(this);
     /* 每次删除掉一个玩家后要从world中拿出来 */

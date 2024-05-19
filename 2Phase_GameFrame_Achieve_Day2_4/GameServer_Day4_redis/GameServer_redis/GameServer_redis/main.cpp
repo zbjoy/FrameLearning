@@ -3,6 +3,7 @@
 #include <ZinxTCP.h>
 #include "GameChannel.h"
 #include "RandomName.h"
+#include "TimerChannel.h"
 
 using namespace std;
 
@@ -58,6 +59,20 @@ void deamon_init()
 	}
 }
 
+//class testSayHello : public TimerProc
+//{
+//public:
+//	// 通过 TimerProc 继承
+//	void Proc() override
+//	{
+//		cout << "Hello World!!" << endl;
+//	}
+//	int GetTimerSec() override
+//	{
+//		return 2;
+//	}
+//};
+
 int main()
 {
 	// deamon_init();
@@ -66,6 +81,9 @@ int main()
 	ZinxKernel::ZinxKernelInit();
 
 	ZinxKernel::Zinx_Add_Channel(*new ZinxTCPListen(8899, new GameConnFact()));
+	ZinxKernel::Zinx_Add_Channel(*new TimerChannel);
+
+	// TimerMng::GetInstance()->Add_Task(new testSayHello);
 
 	ZinxKernel::Zinx_Run();
 	ZinxKernel::ZinxKernelFini();

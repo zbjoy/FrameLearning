@@ -84,6 +84,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="msg.pb.cpp" />
     <ClCompile Include="RandomName.cpp" />
+    <ClCompile Include="TimerChannel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AOIWorld.h" />
@@ -93,6 +94,7 @@
     <ClInclude Include="GameRole.h" />
     <ClInclude Include="msg.pb.h" />
     <ClInclude Include="RandomName.h" />
+    <ClInclude Include="TimerChannel.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>

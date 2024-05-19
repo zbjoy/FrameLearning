@@ -4,66 +4,13 @@
   正在验证体系结构
   正在启动远程生成
   正在编译源:
-  AOIWorld.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\AOIWorld.cpp(103,1): warning : no return statement in function returning non-void [-Wreturn-type]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\AOIWorld.cpp(103,1): warning :   103 | }
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\AOIWorld.cpp(103,1): warning :       | ^
-  GameChannel.cpp
-  GameMsg.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameMsg.h(20,7): warning : ‘GameMsg::enMsgType’ will be initialized after [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameMsg.h(20,7): warning :    20 |     } enMsgType;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameMsg.h(20,7): warning :       |       ^~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameMsg.h(10,32): warning : ‘google::protobuf::Message* GameMsg::pMsg’ [-Wreorder]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameMsg.cpp(3,1): warning : when initialized here [-Wreorder]
-  GameProtocol.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(38,27): warning : comparison of integer expressions of different signedness: ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(38,27): warning :    38 |         if (szLast.size() < length + 8)
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(38,27): warning :       |             ~~~~~~~~~~~~~~^~~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(70,30): warning : conversion from ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(70,30): warning :    70 |     int length = content.size();
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(70,30): warning :       |                  ~~~~~~~~~~~~^~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(72,31): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(72,31): warning :    72 |     pRetStr->push_back(length >> 0);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(72,31): warning :       |                        ~~~~~~~^~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(73,31): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(73,31): warning :    73 |     pRetStr->push_back(length >> 8);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(73,31): warning :       |                        ~~~~~~~^~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(74,31): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(74,31): warning :    74 |     pRetStr->push_back(length >> 16);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(74,31): warning :       |                        ~~~~~~~^~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(75,31): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(75,31): warning :    75 |     pRetStr->push_back(length >> 24);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(75,31): warning :       |                        ~~~~~~~^~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(77,28): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(77,28): warning :    77 |     pRetStr->push_back(pid >> 0);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(77,28): warning :       |                        ~~~~^~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(78,28): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(78,28): warning :    78 |     pRetStr->push_back(pid >> 8);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(78,28): warning :       |                        ~~~~^~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(79,28): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(79,28): warning :    79 |     pRetStr->push_back(pid >> 16);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(79,28): warning :       |                        ~~~~^~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(80,28): warning : conversion from ‘int’ to ‘char’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(80,28): warning :    80 |     pRetStr->push_back(pid >> 24);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameProtocol.cpp(80,28): warning :       |                        ~~~~^~~~~
   GameRole.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(24,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(24,13): warning :    24 |     x = 100 + random_engine() % 50;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(24,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(25,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(25,13): warning :    25 |     z = 100 + random_engine() % 50;
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(25,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(45,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(45,13): warning :    45 |     x = 100 + random_engine() % 50;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(45,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(46,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(46,13): warning :    46 |     z = 100 + random_engine() % 50;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(46,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
   main.cpp
-  msg.pb.cpp
-  RandomName.cpp
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(13,46): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(13,46): warning :    13 |         int first_name_index = rand_engine() % m_name_pool.size();
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(13,46): warning :       |                                ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(14,45): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(14,45): warning :    14 |         int last_name_index = rand_engine() % m_name_pool[first_name_index]->m_last_name_list.size();
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(14,45): warning :       |                               ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(25,35): warning : conversion from ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(25,35): warning :    25 |         int space_pos = _name.find(" ", 0);
-E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\RandomName.cpp(25,35): warning :       |                         ~~~~~~~~~~^~~~~~~~
   正在链接对象
   GameServer_redis.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\bin\x64\Debug\GameServer_redis.out
