@@ -4,9 +4,12 @@
 
 GameChannel::~GameChannel()
 {
-    ZinxKernel::Zinx_Del_Proto(*m_protocol);
-    delete m_protocol;
-    m_protocol = nullptr;
+    if (m_protocol != nullptr)
+    {
+		ZinxKernel::Zinx_Del_Proto(*m_protocol);
+		delete m_protocol;
+		m_protocol = nullptr;
+    }
 }
 
 AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)

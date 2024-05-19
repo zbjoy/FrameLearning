@@ -131,10 +131,14 @@ GameMsg* GameRole::CreateLogoffIDName()
 
 void GameRole::ViewAppear(GameRole* _pGameRole)
 {
+    ZinxKernel::Zinx_SendOut(*CreateSelfPosition(), *_pGameRole->m_protocol);
+    ZinxKernel::Zinx_SendOut(*_pGameRole->CreateSelfPosition(), *m_protocol);
 }
 
-void GameRole::ViewLoat(GameRole* _pGameRole)
+void GameRole::ViewLost(GameRole* _pGameRole)
 {
+    ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *_pGameRole->m_protocol);
+    ZinxKernel::Zinx_SendOut(*_pGameRole->CreateLogoffIDName(), *m_protocol);
 }
 
 void GameRole::ProcChatMsg(google::protobuf::Message* _pmsg)
@@ -161,6 +165,9 @@ void GameRole::ProcChatMsg(google::protobuf::Message* _pmsg)
 
 void GameRole::ProcMoveMsg(google::protobuf::Message* _pmsg)
 {
+    /* 视野切换 */
+    auto s1 = world.GetSrdPlayerPosition(this);
+
     pb::Position* msg_pos = dynamic_cast<pb::Position*>(_pmsg);
 
     world.Del_Player(this);
@@ -171,6 +178,28 @@ void GameRole::ProcMoveMsg(google::protobuf::Message* _pmsg)
     v = msg_pos->v();
 
     world.Add_Player(this);
+
+    auto s2 = world.GetSrdPlayerPosition(this);
+
+    /* 视野出现 */
+    for (auto single : s2)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        if (s1.end() == std::find(s1.begin(), s1.end(), player))
+        {
+            ViewAppear(player);
+        }
+    }
+
+    /* 视野消失 */
+    for (auto single : s1)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        if (s2.end() == std::find(s2.begin(), s2.end(), player))
+        {
+            ViewLost(player);
+        }
+    }
 
     pb::BroadCast* pMsg = new pb::BroadCast();
     pMsg->set_pid(m_pid);

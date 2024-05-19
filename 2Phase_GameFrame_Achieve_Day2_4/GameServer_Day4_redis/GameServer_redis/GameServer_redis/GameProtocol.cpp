@@ -5,9 +5,12 @@
 
 GameProtocol::~GameProtocol()
 {
-    ZinxKernel::Zinx_Del_Role(*m_role);
-    delete m_role;
-    m_role = nullptr;
+    if (m_role != nullptr)
+    {
+		ZinxKernel::Zinx_Del_Role(*m_role);
+		delete m_role;
+		m_role = nullptr;
+    }
 }
 
 UserData* GameProtocol::raw2request(std::string _szInput)
