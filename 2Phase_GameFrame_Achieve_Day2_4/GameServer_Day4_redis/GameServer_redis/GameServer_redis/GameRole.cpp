@@ -35,6 +35,23 @@ bool GameRole::Init()
 
 UserData* GameRole::ProcMsg(UserData& _poUserData)
 {
+    GET_REF2DATA(MultiMsg, multiMsg, _poUserData);
+
+    for (auto gameMsg : multiMsg.m_msg_list)
+    {
+        switch (gameMsg->enMsgType)
+        {
+        case GameMsg::MSG_TYPE_CHAT_CONTENT:
+            std::cout << "发送了一个对话" << std::endl;
+            ProcChatMsg(gameMsg->pMsg);
+            break;
+        case GameMsg::MSG_TYPE_NEW_POSITION:
+            ProcMoveMsg(gameMsg->pMsg);
+            break;
+        default:
+            break;
+        }
+    }
 
     return nullptr;
 }
@@ -92,6 +109,63 @@ GameMsg* GameRole::CreateSelfPosition()
     msg_pos->set_v(v);
     GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
     return pRetMsg;
+}
+
+void GameRole::ProcChatMsg(google::protobuf::Message* _pmsg)
+{
+    pb::Talk* msg_talk = dynamic_cast<pb::Talk*>(_pmsg);
+    std::string content = msg_talk->content();
+    std::cout << "取出了一个消息:" << content << std::endl;
+
+    pb::BroadCast* pMsg = new pb::BroadCast();
+    pMsg->set_pid(m_pid);
+    pMsg->set_username(m_Name);
+    pMsg->set_tp(1);
+    pMsg->set_contecnt(content);
+
+
+    auto player_list = world.GetSrdPlayerPosition(this);
+    for (auto single : player_list)
+    {
+		GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
+        auto player = dynamic_cast<GameRole*>(single);
+        ZinxKernel::Zinx_SendOut(*pRetMsg, *player->m_protocol);
+    }
+}
+
+void GameRole::ProcMoveMsg(google::protobuf::Message* _pmsg)
+{
+    pb::Position* msg_pos = dynamic_cast<pb::Position*>(_pmsg);
+
+    world.Del_Player(this);
+
+    x = msg_pos->x();
+    y = msg_pos->y();
+    z = msg_pos->z();
+    v = msg_pos->v();
+
+    world.Add_Player(this);
+
+    pb::BroadCast* pMsg = new pb::BroadCast();
+    pMsg->set_pid(m_pid);
+    pMsg->set_username(m_Name);
+    pMsg->set_tp(2);
+    auto pos = pMsg->mutable_p();
+    // pos->set_x((int)x);
+    pos->set_x(x);
+    pos->set_y(y);
+    // pos->set_z((int)z);
+    pos->set_z(z);
+    pos->set_v(v);
+
+
+    auto player_list = world.GetSrdPlayerPosition(this);
+    for (auto single : player_list)
+    {
+		GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
+        auto player = dynamic_cast<GameRole*>(single);
+        ZinxKernel::Zinx_SendOut(*pRetMsg, *player->m_protocol);
+    }
 }
 
 float GameRole::GetX()

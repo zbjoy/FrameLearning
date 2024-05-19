@@ -6,7 +6,9 @@
 UserData* GameProtocol::raw2request(std::string _szInput)
 {
     MultiMsg* pRetMsg = new MultiMsg();
-    szLast.append(_szInput.data());
+	// szLast.append(_szInput.data()); // 这样是错的, 为什么???
+	szLast.append(_szInput);
+	// szLast.append(_szInput.c_str());
 
     while (true)
     {
@@ -36,6 +38,7 @@ UserData* GameProtocol::raw2request(std::string _szInput)
         pid |= szLast[7] << 24;
 
         GameMsg* temp = new GameMsg((GameMsg::MSG_TYPE)pid, szLast.substr(8, length));
+        std::cout << temp->pMsg->Utf8DebugString();
 
         pRetMsg->m_msg_list.push_back(temp);
 
