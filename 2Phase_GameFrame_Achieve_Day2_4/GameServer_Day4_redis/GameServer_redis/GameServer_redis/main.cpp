@@ -30,6 +30,12 @@ void deamon_init()
 	while (true)
 	{
 		int pid2 = fork();
+
+		if (pid2 < 0)
+		{
+			exit(-1);
+		}
+
 		if (pid2 > 0)
 		{
 			int status;
@@ -49,7 +55,7 @@ void deamon_init()
 
 int main()
 {
-	deamon_init();
+	// deamon_init();
 
 	ZinxKernel::ZinxKernelInit();
 

@@ -4,6 +4,12 @@
   正在验证体系结构
   正在启动远程生成
   正在编译源:
-  main.cpp
+  GameRole.cpp
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(15,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(15,13): warning :    15 |     x = 100 + 3 * m_pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(15,13): warning :       |         ~~~~^~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(16,13): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(16,13): warning :    16 |     z = 100 + 3 * m_pid;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(16,13): warning :       |         ~~~~^~~~~~~~~~~
   正在链接对象
   GameServer_redis.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\bin\x64\Debug\GameServer_redis.out

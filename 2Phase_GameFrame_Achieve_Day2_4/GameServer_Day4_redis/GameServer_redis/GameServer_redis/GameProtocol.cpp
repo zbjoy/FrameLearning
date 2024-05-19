@@ -3,6 +3,13 @@
 #include "GameRole.h"
 #include "GameMsg.h"
 
+GameProtocol::~GameProtocol()
+{
+    ZinxKernel::Zinx_Del_Role(*m_role);
+    delete m_role;
+    m_role = nullptr;
+}
+
 UserData* GameProtocol::raw2request(std::string _szInput)
 {
     MultiMsg* pRetMsg = new MultiMsg();

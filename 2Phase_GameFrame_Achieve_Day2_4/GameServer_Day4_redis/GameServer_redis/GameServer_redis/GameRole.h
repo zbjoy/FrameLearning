@@ -29,6 +29,10 @@ private:
     GameMsg* CreateLoginIDName();
     GameMsg* CreateSrdPlayerPosition();
     GameMsg* CreateSelfPosition();
+    GameMsg* CreateLogoffIDName();
+
+    void ViewAppear(GameRole* _pGameRole);
+    void ViewLoat(GameRole* _pGameRole);
 
     void ProcChatMsg(google::protobuf::Message* _pmsg);
     void ProcMoveMsg(google::protobuf::Message* _pmsg);

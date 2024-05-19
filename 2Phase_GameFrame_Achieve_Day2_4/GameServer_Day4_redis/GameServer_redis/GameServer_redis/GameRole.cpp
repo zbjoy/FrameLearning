@@ -58,6 +58,15 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    // ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *m_protocol);
+    auto player_list = world.GetSrdPlayerPosition(this);
+    /* 每次删除掉一个玩家后要从world中拿出来 */
+    world.Del_Player(this);
+    for (auto single : player_list)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *player->m_protocol);
+    }
 }
 
 GameMsg* GameRole::CreateLoginIDName()
@@ -109,6 +118,23 @@ GameMsg* GameRole::CreateSelfPosition()
     msg_pos->set_v(v);
     GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
     return pRetMsg;
+}
+
+GameMsg* GameRole::CreateLogoffIDName()
+{
+    pb::SyncPid* pMsg = new pb::SyncPid();
+    pMsg->set_pid(m_pid);
+    pMsg->set_username(m_Name);
+    GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_LOGOFF_ID_NAME, pMsg);
+    return pRetMsg;
+}
+
+void GameRole::ViewAppear(GameRole* _pGameRole)
+{
+}
+
+void GameRole::ViewLoat(GameRole* _pGameRole)
+{
 }
 
 void GameRole::ProcChatMsg(google::protobuf::Message* _pmsg)

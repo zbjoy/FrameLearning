@@ -2,6 +2,13 @@
 #include "GameProtocol.h"
 #include "GameRole.h"
 
+GameChannel::~GameChannel()
+{
+    ZinxKernel::Zinx_Del_Proto(*m_protocol);
+    delete m_protocol;
+    m_protocol = nullptr;
+}
+
 AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)
 {
     return m_protocol;
