@@ -2,17 +2,21 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
+#include "RandomName.h"
 #include <iostream>
 #include <string.h>
 #include <random>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 static std::default_random_engine random_engine(time(NULL));
+RandomName randomName;
 
 bool GameRole::Init()
 {
     m_pid = m_protocol->m_channel->GetFd();
-    m_Name = std::string("Tom") + std::to_string(m_pid);
+    // m_Name = std::string("Tom") + std::to_string(m_pid);
+    /* 从随机姓名池任意取一个 */
+    m_Name = randomName.GetName();
 
     // x = 100 + 3 * m_pid;
     // z = 100 + 3 * m_pid;
@@ -72,6 +76,9 @@ void GameRole::Fini()
         auto player = dynamic_cast<GameRole*>(single);
         ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *player->m_protocol);
     }
+
+    /* 释放姓名 */
+    randomName.ReleaseName(m_Name);
 }
 
 GameMsg* GameRole::CreateLoginIDName()

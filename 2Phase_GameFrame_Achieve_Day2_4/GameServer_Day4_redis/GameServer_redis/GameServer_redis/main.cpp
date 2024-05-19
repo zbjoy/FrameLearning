@@ -2,10 +2,13 @@
 #include <zinx.h>
 #include <ZinxTCP.h>
 #include "GameChannel.h"
+#include "RandomName.h"
 
 using namespace std;
 
 /* 这次延迟好像有点高 */
+
+extern class RandomName randomName;
 
 void deamon_init()
 {
@@ -58,6 +61,7 @@ void deamon_init()
 int main()
 {
 	// deamon_init();
+	randomName.LoadFile();
 
 	ZinxKernel::ZinxKernelInit();
 
