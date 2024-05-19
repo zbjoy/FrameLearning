@@ -4,16 +4,21 @@
 #include "GameMsg.h"
 #include <iostream>
 #include <string.h>
+#include <random>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
+static std::default_random_engine random_engine(time(NULL));
 
 bool GameRole::Init()
 {
     m_pid = m_protocol->m_channel->GetFd();
     m_Name = std::string("Tom") + std::to_string(m_pid);
 
-    x = 100 + 3 * m_pid;
-    z = 100 + 3 * m_pid;
+    // x = 100 + 3 * m_pid;
+    // z = 100 + 3 * m_pid;
+    /* 随机位置 */
+    x = 100 + random_engine() % 50;
+    z = 100 + random_engine() % 50;
 
     world.Add_Player(this);
 

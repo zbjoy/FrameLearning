@@ -5,6 +5,8 @@
 
 using namespace std;
 
+/* 这次延迟好像有点高 */
+
 void deamon_init()
 {
 	int pid = fork();
