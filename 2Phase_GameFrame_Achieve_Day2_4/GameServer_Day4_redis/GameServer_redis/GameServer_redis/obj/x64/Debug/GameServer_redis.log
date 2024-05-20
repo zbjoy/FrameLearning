@@ -3,5 +3,13 @@
   正在验证体系结构
   正在验证体系结构
   正在启动远程生成
+  正在编译源:
+  GameRole.cpp
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(51,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(51,13): warning :    51 |     x = 100 + random_engine() % 50;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(51,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(52,13): warning : conversion from ‘std::linear_congruential_engine<long unsigned int, 16807, 0, 2147483647>::result_type’ {aka ‘long unsigned int’} to ‘float’ may change value [-Wconversion]
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(52,13): warning :    52 |     z = 100 + random_engine() % 50;
+E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\GameRole.cpp(52,13): warning :       |         ~~~~^~~~~~~~~~~~~~~~~~~~~~
   正在链接对象
   GameServer_redis.vcxproj -> E:\code\FrameLearning_GameServer\FrameLearning\2Phase_GameFrame_Achieve_Day2_4\GameServer_Day4_redis\GameServer_redis\GameServer_redis\bin\x64\Debug\GameServer_redis.out

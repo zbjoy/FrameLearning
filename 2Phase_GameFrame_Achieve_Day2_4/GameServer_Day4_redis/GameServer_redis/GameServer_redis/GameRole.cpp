@@ -7,6 +7,7 @@
 #include <string.h>
 #include <random>
 #include "TimerChannel.h"
+#include <fstream>
 
 class Exit_Game : public TimerProc
 {
@@ -39,6 +40,11 @@ bool GameRole::Init()
     /* 从随机姓名池任意取一个 */
 	m_Name = randomName.GetName();
 
+    /* 将姓名存入/tmp中方便查找 */
+    std::ofstream ofs_name("/tmp/record_name", std::ios::app);
+    ofs_name << m_Name << std::endl;
+
+    
     // x = 100 + 3 * m_pid;
     // z = 100 + 3 * m_pid;
     /* 随机位置 */
@@ -105,6 +111,26 @@ void GameRole::Fini()
 
     /* 释放姓名 */
     randomName.ReleaseName(m_Name);
+
+    std::ifstream ifs_name("/tmp/record_name");
+    std::string temp;
+    std::list<std::string> cur_name_list;
+    while (std::getline(ifs_name, temp))
+    {
+        if (temp != m_Name)
+        {
+			cur_name_list.push_back(temp);
+        }
+    }
+
+    std::ofstream ofs_name("/tmp/record_name");
+    for (auto single : cur_name_list)
+    {
+        ofs_name << single;
+    }
+
+    ifs_name.close();
+    ofs_name.close();
 }
 
 GameMsg* GameRole::CreateLoginIDName()
