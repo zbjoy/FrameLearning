@@ -37,7 +37,7 @@ bool GameRole::Init()
     m_pid = m_protocol->m_channel->GetFd();
     // m_Name = std::string("Tom") + std::to_string(m_pid);
     /* 从随机姓名池任意取一个 */
-    m_Name = randomName.GetName();
+	m_Name = randomName.GetName();
 
     // x = 100 + 3 * m_pid;
     // z = 100 + 3 * m_pid;

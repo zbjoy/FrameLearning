@@ -4,6 +4,7 @@
 #include "GameChannel.h"
 #include "RandomName.h"
 #include "TimerChannel.h"
+#include <hiredis/hiredis.h>
 
 using namespace std;
 
@@ -75,8 +76,29 @@ void deamon_init()
 
 int main()
 {
-	// deamon_init();
+	deamon_init();
 	randomName.LoadFile();
+
+	// redisContext* redisConnect(const char* ip, int port);
+	// redisConnect("127.0.0.1", 8899);
+	// auto content = redisConnect("127.0.0.1", 8899);
+	redisContext* c = redisConnect("127.0.0.1", 6379);
+	if (c == NULL || c->err) {
+		if (c) {
+			printf("Error: %s\n", c->errstr);
+			// handle error
+		}
+		else {
+			printf("Can't allocate redis context\n");
+		}
+	}
+
+	// void* redisCommand(redisContext * c, const char* format, ...);
+	// auto reply = redisCommand(c, "set haha %s", "abc");
+	// void freeReplyObject(void* reply);
+	// freeReplyObject(reply);
+	// redisFree(c);
+
 
 	ZinxKernel::ZinxKernelInit();
 
