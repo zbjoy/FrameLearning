@@ -47,7 +47,7 @@ bool GameRole::Init()
     /*-------------------------------------------------------------*/
     redisContext* c = redisConnect("127.0.0.1", 6379);
 
-    void* reply = redisCommand(c, "LPUSH game_name %s", m_Name);
+    void* reply = redisCommand(c, "LPUSH game_name \"%s\"", m_Name.c_str());
     freeReplyObject(reply);
 
     redisFree(c);
@@ -127,7 +127,7 @@ void GameRole::Fini()
     /*-------------------------------------------------------------*/
     redisContext* c = redisConnect("127.0.0.1", 6379);
 
-    void* reply = redisCommand(c, "LREM game_name 0 %s", m_Name);
+    void* reply = redisCommand(c, "LREM game_name 0 \"%s\"", m_Name.c_str());
     freeReplyObject(reply);
 
     redisFree(c);
