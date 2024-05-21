@@ -8,6 +8,7 @@
 #include <random>
 #include "TimerChannel.h"
 #include <fstream>
+#include <hiredis/hiredis.h>
 
 class Exit_Game : public TimerProc
 {
@@ -42,6 +43,16 @@ bool GameRole::Init()
 
     /* 将姓名存入/tmp中方便查找 */
     std::ofstream ofs_name("/tmp/record_name", std::ios::app);
+    /* 将名字存入redis缓存 */
+    /*-------------------------------------------------------------*/
+    redisContext* c = redisConnect("127.0.0.1", 6379);
+
+    void* reply = redisCommand(c, "LPUSH game_name %s", m_Name);
+    freeReplyObject(reply);
+
+    redisFree(c);
+    /*-------------------------------------------------------------*/
+
     ofs_name << m_Name << std::endl;
 
     
@@ -111,6 +122,16 @@ void GameRole::Fini()
 
     /* 释放姓名 */
     randomName.ReleaseName(m_Name);
+
+    /* 将姓名从redis中释放 */
+    /*-------------------------------------------------------------*/
+    redisContext* c = redisConnect("127.0.0.1", 6379);
+
+    void* reply = redisCommand(c, "LREM game_name 0 %s", m_Name);
+    freeReplyObject(reply);
+
+    redisFree(c);
+    /*-------------------------------------------------------------*/
 
     std::ifstream ifs_name("/tmp/record_name");
     std::string temp;
