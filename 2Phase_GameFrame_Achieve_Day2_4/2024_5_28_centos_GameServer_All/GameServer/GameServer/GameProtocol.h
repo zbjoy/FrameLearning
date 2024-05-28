@@ -16,5 +16,8 @@ public:
 public:
     GameChannel* m_channel;
     GameRole* m_role;
+
+private:
+    std::string szLast;
 };
 

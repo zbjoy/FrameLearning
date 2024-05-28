@@ -4,3 +4,7 @@
 *.suo
 *.db
 *.json
+*.vcxproj
+*.user
+.vs
+*.log

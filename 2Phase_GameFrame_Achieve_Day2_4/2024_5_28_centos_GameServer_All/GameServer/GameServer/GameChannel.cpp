@@ -4,13 +4,13 @@
 
 AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)
 {
-    std::cout << "接收到消息" << std::endl;
-    return nullptr;
+    // std::cout << "接收到消息" << std::endl;
+    return m_protocol;
 }
 
 ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
 {
-    std::cout << "接收到连接" << std::endl;
+    // std::cout << "接收到连接" << std::endl;
     GameChannel* pChannel = new GameChannel(_fd);
     GameProtocol* pProtocol = new GameProtocol();
 
