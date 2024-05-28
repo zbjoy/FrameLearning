@@ -21,6 +21,8 @@ public:
 
     GameMsg(GameMsg::MSG_TYPE _type, google::protobuf::Message* _pMsg);
     GameMsg(GameMsg::MSG_TYPE _type, std::string _strstream);
+
+    std::string serialize();
 };
 
 class MultiMsg : public UserData

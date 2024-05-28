@@ -33,3 +33,10 @@ GameMsg::GameMsg(GameMsg::MSG_TYPE _type, std::string _strstream) : enMsgType(_t
 
 	pMsg->ParseFromString(_strstream);
 }
+
+std::string GameMsg::serialize()
+{
+	std::string temp;
+	pMsg->SerializeToString(&temp);
+	return temp;
+}

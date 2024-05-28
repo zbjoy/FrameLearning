@@ -53,13 +53,32 @@ UserData* GameProtocol::raw2request(std::string _szInput)
 
 std::string* GameProtocol::response2raw(UserData& _oUserData)
 {
-    return nullptr;
+    GET_REF2DATA(GameMsg, _gameMsg, _oUserData);
+
+    std::string content = _gameMsg.serialize();
+    int length = content.size();
+    int pid = _gameMsg.enMsgType;
+
+    std::string* pRetStr = new std::string();
+
+    pRetStr->push_back(length >> 0);
+    pRetStr->push_back(length >> 8);
+    pRetStr->push_back(length >> 16);
+    pRetStr->push_back(length >> 24);
+
+    pRetStr->push_back(pid >> 0);
+    pRetStr->push_back(pid >> 8);
+    pRetStr->push_back(pid >> 16);
+    pRetStr->push_back(pid >> 24);
+
+    pRetStr->append(content);
+
+    return pRetStr;
 }
 
 Irole* GameProtocol::GetMsgProcessor(UserDataMsg& _oUserDataMsg)
 {
-    return nullptr;
-    // return m_role;
+    return m_role;
 }
 
 Ichannel* GameProtocol::GetMsgSender(BytesMsg& _oBytes)
