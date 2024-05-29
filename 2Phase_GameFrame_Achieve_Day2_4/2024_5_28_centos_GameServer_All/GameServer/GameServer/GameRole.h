@@ -1,6 +1,7 @@
 #pragma once
 #include <zinx.h>
 
+class GameMsg;
 class GameProtocol;
 class GameRole :
     public Irole
@@ -13,5 +14,12 @@ public:
 
 public:
     GameProtocol* m_protocol;
+
+private:
+    GameMsg* CreateLoginIDName();
+
+private:
+    int m_Pid;
+    std::string m_Name;
 };
 
