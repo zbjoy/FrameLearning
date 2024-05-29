@@ -24,15 +24,15 @@ bool GameRole::Init()
 
 
     /* 发送周围玩家位置给自己 */
-    // ZinxKernel::Zinx_SendOut(*CreateSrdPosition(), *m_protocol);
+    ZinxKernel::Zinx_SendOut(*CreateSrdPosition(), *m_protocol);
 
     /* ------------------------------------------------ */
     // 用上面的方法发不出去, 但这个方法就可以
-    for (auto single : player_list)
-    {
-        auto player = dynamic_cast<GameRole*>(single);
-        ZinxKernel::Zinx_SendOut(*player->CreateSelfPosition(), *m_protocol);
-    }
+    //for (auto single : player_list)
+    //{
+    //    auto player = dynamic_cast<GameRole*>(single);
+    //    ZinxKernel::Zinx_SendOut(*player->CreateSelfPosition(), *m_protocol);
+    //}
     /* ------------------------------------------------ */
 
 
@@ -57,8 +57,13 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
         /* 处理GameMsg传来的对应的业务消息 */
         switch (pGameMsg->enMsgType)
         {
+            /* 处理聊天 */
         case GameMsg::MSG_TYPE_CHAT_CONTENT:
-            ProcChatContent(pGameMsg->pMsg);
+            ProcChatMsg(pGameMsg->pMsg);
+            break;
+            /* 处理移动 */
+        case GameMsg::MSG_TYPE_NEW_POSITION:
+            ProcMoveMsg(pGameMsg->pMsg);
             break;
         default:
             break;
@@ -92,11 +97,11 @@ GameMsg* GameRole::CreateSrdPosition()
     auto msg_players = pMsg->mutable_ps();
 
     std::cout << "发送给" << m_Name << "的所有玩家" << std::endl;
-    for (auto single : player_list)
-    {
-        auto player = dynamic_cast<GameRole*>(single);
-        std::cout << "姓名: " << player->m_Name << std::endl;
-    }
+    //for (auto single : player_list)
+    //{
+    //    auto player = dynamic_cast<GameRole*>(single);
+    //    std::cout << "姓名: " << player->m_Name << std::endl;
+    //}
     for (auto single : player_list)
     {
         auto player = dynamic_cast<GameRole*>(single);
@@ -135,7 +140,7 @@ GameMsg* GameRole::CreateSelfPosition()
 }
 
 // void GameRole::ProcChatContent(pb::Talk* pMsg)
-void GameRole::ProcChatContent(google::protobuf::Message* _pMsg)
+void GameRole::ProcChatMsg(google::protobuf::Message* _pMsg)
 {
     auto pChatMsg = dynamic_cast<pb::Talk*>(_pMsg);
     std::string content = pChatMsg->contect();
@@ -145,6 +150,38 @@ void GameRole::ProcChatContent(google::protobuf::Message* _pMsg)
     pMsg->set_username(m_Name);
     pMsg->set_tp(1);
     pMsg->set_content(content);
+
+    auto player_list = world.GetSrdPlayersPosition(this);
+    for (auto single : player_list)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
+        ZinxKernel::Zinx_SendOut(*pGameMsg, *player->m_protocol);
+    }
+}
+
+void GameRole::ProcMoveMsg(google::protobuf::Message* _pMsg)
+{
+    auto pMoveMsg = dynamic_cast<pb::Position*>(_pMsg);
+    
+
+    world.Del_Player(this);
+    x = pMoveMsg->x();
+    y = pMoveMsg->y();
+    z = pMoveMsg->z();
+    v = pMoveMsg->v();
+    world.Add_Player(this);
+
+    pb::BroadCast* pMsg = new pb::BroadCast();
+    pMsg->set_pid(m_Pid);
+    pMsg->set_username(m_Name);
+    pMsg->set_tp(2);
+
+    auto msg_pos = pMsg->mutable_p();
+    msg_pos->set_x(x);
+    msg_pos->set_y(y);
+    msg_pos->set_z(z);
+    msg_pos->set_v(v);
 
     auto player_list = world.GetSrdPlayersPosition(this);
     for (auto single : player_list)

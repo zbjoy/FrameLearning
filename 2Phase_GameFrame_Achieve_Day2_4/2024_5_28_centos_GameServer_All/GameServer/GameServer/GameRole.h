@@ -27,8 +27,9 @@ private:
     GameMsg* CreateSrdPosition();
     GameMsg* CreateSelfPosition();
 
-    void ProcChatContent(google::protobuf::Message* _pMsg);
+    void ProcChatMsg(google::protobuf::Message* _pMsg);
     // void ProcChatContent(pb::Talk* pMsg);
+    void ProcMoveMsg(google::protobuf::Message* _pMsg);
 
 private:
     int m_Pid;
