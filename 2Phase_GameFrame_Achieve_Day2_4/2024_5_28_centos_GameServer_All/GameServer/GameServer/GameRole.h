@@ -1,6 +1,7 @@
 #pragma once
 #include <zinx.h>
 #include "AOIWorld.h"
+#include "msg.pb.h"
 
 class GameMsg;
 class GameProtocol;
@@ -25,6 +26,9 @@ private:
     GameMsg* CreateLoginIDName();
     GameMsg* CreateSrdPosition();
     GameMsg* CreateSelfPosition();
+
+    void ProcChatContent(google::protobuf::Message* _pMsg);
+    // void ProcChatContent(pb::Talk* pMsg);
 
 private:
     int m_Pid;

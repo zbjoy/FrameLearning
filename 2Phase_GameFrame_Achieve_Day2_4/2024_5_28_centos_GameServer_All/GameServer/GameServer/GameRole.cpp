@@ -2,7 +2,6 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
-#include "msg.pb.h"
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 
@@ -56,6 +55,14 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
     for (auto pGameMsg : _multiMsg.m_msg_list)
     {
         /* 处理GameMsg传来的对应的业务消息 */
+        switch (pGameMsg->enMsgType)
+        {
+        case GameMsg::MSG_TYPE_CHAT_CONTENT:
+            ProcChatContent(pGameMsg->pMsg);
+            break;
+        default:
+            break;
+        }
     }
 
     return nullptr;
@@ -125,6 +132,27 @@ GameMsg* GameRole::CreateSelfPosition()
 
     GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
     return pRetMsg;
+}
+
+// void GameRole::ProcChatContent(pb::Talk* pMsg)
+void GameRole::ProcChatContent(google::protobuf::Message* _pMsg)
+{
+    auto pChatMsg = dynamic_cast<pb::Talk*>(_pMsg);
+    std::string content = pChatMsg->contect();
+
+    pb::BroadCast* pMsg = new pb::BroadCast();
+    pMsg->set_pid(m_Pid);
+    pMsg->set_username(m_Name);
+    pMsg->set_tp(1);
+    pMsg->set_content(content);
+
+    auto player_list = world.GetSrdPlayersPosition(this);
+    for (auto single : player_list)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        GameMsg* pGameMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
+        ZinxKernel::Zinx_SendOut(*pGameMsg, *player->m_protocol);
+    }
 }
 
 float GameRole::GetX()
