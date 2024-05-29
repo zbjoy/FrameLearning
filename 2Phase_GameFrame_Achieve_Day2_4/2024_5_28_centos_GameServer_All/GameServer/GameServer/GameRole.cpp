@@ -20,11 +20,25 @@ bool GameRole::Init()
     /* 发送上线消息 */
     ZinxKernel::Zinx_SendOut(*CreateLoginIDName(), *m_protocol); // 有什么用 ??? 
 
+    auto player_list = world.GetSrdPlayersPosition(this);
+
+
+
     /* 发送周围玩家位置给自己 */
-    ZinxKernel::Zinx_SendOut(*CreateSrdPosition(), *m_protocol);
+    // ZinxKernel::Zinx_SendOut(*CreateSrdPosition(), *m_protocol);
+
+    /* ------------------------------------------------ */
+    // 用上面的方法发不出去, 但这个方法就可以
+    for (auto single : player_list)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        ZinxKernel::Zinx_SendOut(*player->CreateSelfPosition(), *m_protocol);
+    }
+    /* ------------------------------------------------ */
+
+
     
     /* 发送自己位置给周围玩家 */
-    auto player_list = world.GetSrdPlayersPosition(this);
     for (auto single : player_list)
     {
         auto player = dynamic_cast<GameRole*>(single);
@@ -70,9 +84,16 @@ GameMsg* GameRole::CreateSrdPosition()
     pb::SyncPlayers* pMsg = new pb::SyncPlayers();
     auto msg_players = pMsg->mutable_ps();
 
+    std::cout << "发送给" << m_Name << "的所有玩家" << std::endl;
     for (auto single : player_list)
     {
         auto player = dynamic_cast<GameRole*>(single);
+        std::cout << "姓名: " << player->m_Name << std::endl;
+    }
+    for (auto single : player_list)
+    {
+        auto player = dynamic_cast<GameRole*>(single);
+        // pb::Player* msg_player = msg_players->Add();
         pb::Player* msg_player = msg_players->Add();
         msg_player->set_pid(player->m_Pid);
         msg_player->set_username(player->m_Name);
@@ -82,7 +103,7 @@ GameMsg* GameRole::CreateSrdPosition()
         msg_pos->set_z(player->v);
         msg_pos->set_v(player->z);
 
-        std::cout << "GameRole::CreateSrdPosition() google debug:" << std::endl;
+        std::cout << "(发送给自己的玩家) GameRole::CreateSrdPosition() google debug:" << std::endl;
         std::cout << msg_player->Utf8DebugString() << std::endl;
     }
 
