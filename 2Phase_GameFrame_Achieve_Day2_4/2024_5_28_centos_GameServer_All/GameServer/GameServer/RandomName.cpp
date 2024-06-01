@@ -82,7 +82,7 @@ void RandomName::ReleaseName(std::string _name)
 	{
 		if (single->m_first_name == first_name)
 		{
-			std::cout << "(ReleaseName)将 lastName 为: " << last_name << " 的加入" << single->m_first_name << " 中 " << std::endl;
+			// std::cout << "(ReleaseName)将 lastName 为: " << last_name << " 的加入" << single->m_first_name << " 中 " << std::endl;
 			single->m_last_name_list.push_back(last_name);
 			isFind = true;
 		}
@@ -90,7 +90,7 @@ void RandomName::ReleaseName(std::string _name)
 
 	if (!isFind)
 	{
-		std::cout << "ReleaseName::isFind: " << std::endl;
+		// std::cout << "ReleaseName::isFind: " << std::endl;
 		FirstName* firstName = new FirstName;
 		firstName->m_first_name = first_name;
 		firstName->m_last_name_list.push_back(last_name);

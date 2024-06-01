@@ -85,6 +85,16 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    /* 发送下线消息 */
+    // ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *m_protocol);
+    auto player_list = world.GetSrdPlayersPosition(this);
+    for (auto single : player_list)
+    {
+        auto pRole = dynamic_cast<GameRole*>(single);
+        ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *pRole->m_protocol);
+    }
+    world.Del_Player(this);
+
     /* 释放姓名 */
     std::cout << "释放了一个姓名: " << m_Name << std::endl;
     randomName.ReleaseName(m_Name);
@@ -155,6 +165,17 @@ GameMsg* GameRole::CreateSelfPosition()
     msg_pos->set_v(v);
 
     GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_BROADCAST, pMsg);
+    return pRetMsg;
+}
+
+GameMsg* GameRole::CreateLogoffIDName()
+{
+    pb::SyncPid* pMsg = new pb::SyncPid;
+    pMsg->set_pid(m_Pid);
+    pMsg->set_username(m_Name);
+
+    GameMsg* pRetMsg = new GameMsg(GameMsg::MSG_TYPE_LOGOFF_ID_NAME, pMsg);
+    
     return pRetMsg;
 }
 
