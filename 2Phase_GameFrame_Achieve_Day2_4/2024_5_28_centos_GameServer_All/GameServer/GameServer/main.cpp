@@ -8,12 +8,18 @@
 
 using namespace std;
 
-//void RandomName_test()
-//{
-//	RandomName randomName;
-//	randomName.Init();
-//	randomName.GetName();
-//}
+void RandomName_test()
+{
+	RandomName randomName;
+	randomName.Init();
+	string name1 = randomName.GetName();
+	string n2 = randomName.GetName();
+	cout << "name1: " << name1 << endl;
+	cout << "n2: " << n2 << endl;
+
+	randomName.ReleaseName(name1);
+	randomName.ReleaseName(n2);
+}
 
 //class TestPlayer : public Player
 //{
@@ -60,7 +66,7 @@ int main()
 {
 
 	// AOIWorld_Test();
-	// RandomName_test();
+	RandomName_test();
 
 	ZinxKernel::ZinxKernelInit();
 

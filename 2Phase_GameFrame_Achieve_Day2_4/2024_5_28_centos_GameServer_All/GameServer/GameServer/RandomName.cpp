@@ -1,6 +1,9 @@
 #include "RandomName.h"
 #include <iostream>
 #include <fstream>
+#include <random>
+
+static std::default_random_engine rand_engine(time(NULL));
 
 void RandomName::Init(std::string _last_name_file, std::string _first_name_file)
 {
@@ -29,23 +32,68 @@ void RandomName::Init(std::string _last_name_file, std::string _first_name_file)
 	}
 }
 
-void RandomName::GetName()
+std::string RandomName::GetName()
 {
-	static int first = true;
-	for (auto single : m_name_pool)
+	//static int first = true;
+	//for (auto single : m_name_pool)
+	//{
+	//	if (first)
+	//	{
+	//		for (auto last_name : single->m_last_name_list)
+	//		{
+	//			std::cout << "名: " << last_name << std::endl;
+	//		}
+	//		first = false;
+	//	}
+	//	std::cout << "姓: " << single->m_first_name << " ";
+	//}
+
+	int first_name_index = rand_engine() % m_name_pool.size();
+	int last_name_index = rand_engine() % m_name_pool[first_name_index]->m_last_name_list.size();
+
+	std::string first_name = m_name_pool[first_name_index]->m_first_name;
+	std::string last_name = m_name_pool[first_name_index]->m_last_name_list[last_name_index];
+
+	auto tempPointer = m_name_pool[first_name_index]->m_last_name_list.erase(m_name_pool[first_name_index]->m_last_name_list.begin() + last_name_index);
+
+	if (m_name_pool[first_name_index]->m_last_name_list.size() == 0)
 	{
-		if (first)
-		{
-			for (auto last_name : single->m_last_name_list)
-			{
-				std::cout << "名: " << last_name << std::endl;
-			}
-			first = false;
-		}
-		std::cout << "姓: " << single->m_first_name << " ";
+		auto pointer = m_name_pool.erase(m_name_pool.begin() + first_name_index);
+		/* 取出后删除开辟的空间 */
+		delete *pointer;
 	}
+
+	return first_name + " " + last_name;
+	
 }
 
 void RandomName::ReleaseName(std::string _name)
 {
+	int pos = _name.find(" ");
+	std::string first_name = _name.substr(0, pos);
+	std::string last_name = _name.substr(pos + 1, _name.size() - pos - 1);
+
+	// std::cout << "pos: " << pos << std::endl;
+	// std::cout << "first_name:" << first_name << std::endl;
+	// std::cout << "last_name:" << last_name << std::endl;
+
+	bool isFind = false;
+	for (auto single : m_name_pool)
+	{
+		if (single->m_first_name == first_name)
+		{
+			single->m_last_name_list.push_back(last_name);
+			isFind = true;
+		}
+	}
+
+	if (!isFind)
+	{
+		FirstName* firstName = new FirstName;
+		firstName->m_first_name = first_name;
+		firstName->m_last_name_list.push_back(last_name);
+	}
+
+	return;
+	
 }

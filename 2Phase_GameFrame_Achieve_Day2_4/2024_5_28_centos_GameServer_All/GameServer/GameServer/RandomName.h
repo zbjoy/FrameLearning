@@ -12,7 +12,7 @@ class RandomName
 {
 public:
 	void Init(std::string _last_name_file = "./random_last.txt", std::string _first_name_file = "./random_first.txt");
-	void GetName();
+	std::string GetName();
 	void ReleaseName(std::string _name);
 
 private:
