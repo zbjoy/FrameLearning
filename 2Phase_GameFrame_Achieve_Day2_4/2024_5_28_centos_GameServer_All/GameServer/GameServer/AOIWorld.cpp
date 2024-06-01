@@ -86,7 +86,7 @@ bool AOIWorld::Add_Player(Player* _player)
 	if (igrid >= 0 && igrid < x_count * y_count)
 	{
 		m_grid_list[igrid].m_player_list.push_back(_player);
-		bRet == true;
+		bRet = true;
 	}
 
 	return bRet;

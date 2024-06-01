@@ -2,9 +2,18 @@
 #include <zinx.h>
 #include "GameChannel.h"
 
+#include "RandomName.h"
+
 // #include "AOIWorld.h"
 
 using namespace std;
+
+//void RandomName_test()
+//{
+//	RandomName randomName;
+//	randomName.Init();
+//	randomName.GetName();
+//}
 
 //class TestPlayer : public Player
 //{
@@ -51,6 +60,7 @@ int main()
 {
 
 	// AOIWorld_Test();
+	// RandomName_test();
 
 	ZinxKernel::ZinxKernelInit();
 

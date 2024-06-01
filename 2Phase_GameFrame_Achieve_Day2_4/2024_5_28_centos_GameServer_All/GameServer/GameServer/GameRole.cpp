@@ -8,6 +8,7 @@ static AOIWorld world(0, 400, 0, 400, 20, 20);
 
 /* 随机位置 */
 std::default_random_engine random_engine(time(NULL));
+/* 随机姓名 */
 
 bool GameRole::Init()
 {
