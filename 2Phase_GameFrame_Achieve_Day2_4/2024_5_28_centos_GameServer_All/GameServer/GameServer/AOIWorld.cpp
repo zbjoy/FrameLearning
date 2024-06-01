@@ -94,14 +94,20 @@ bool AOIWorld::Add_Player(Player* _player)
 
 void AOIWorld::Del_Player(Player* _player)
 {
-	for (auto single : m_grid_list)
-	{
-		// if (single.m_player_list.end() != (std::vector<Player*>::iterator pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player)))
-		auto pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player);
-		// if (single.m_player_list.end() != (std::vector<Player*>::iterator pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player)))
-		if (pos != single.m_player_list.end())
-		{
-			single.m_player_list.erase(pos);
-		}
-	}
+	//for (auto single : m_grid_list)
+	//{
+	//	// if (single.m_player_list.end() != (std::vector<Player*>::iterator pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player)))
+	//	auto pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player);
+	//	// if (single.m_player_list.end() != (std::vector<Player*>::iterator pos = std::find(single.m_player_list.begin(), single.m_player_list.end(), _player)))
+	//	if (pos != single.m_player_list.end())
+	//	{
+	//		single.m_player_list.erase(pos);
+	//	}
+	//}
+
+	int grid = ((int)_player->GetX() - x_begin) / x_width + ((int)_player->GetY() - y_begin) / y_width * x_count;
+	std::find(m_grid_list[grid].m_player_list.begin(), m_grid_list[grid].m_player_list.end(), _player);
+
+	m_grid_list[grid].m_player_list.erase(std::find(m_grid_list[grid].m_player_list.begin(), m_grid_list[grid].m_player_list.end(), _player));
+	
 }

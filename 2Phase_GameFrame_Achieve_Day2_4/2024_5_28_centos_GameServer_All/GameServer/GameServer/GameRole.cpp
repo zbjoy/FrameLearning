@@ -112,8 +112,14 @@ GameMsg* GameRole::CreateSrdPosition()
         pb::Position* msg_pos = msg_player->mutable_p();
         msg_pos->set_x(player->x);
         msg_pos->set_y(player->y);
-        msg_pos->set_z(player->v);
-        msg_pos->set_v(player->z);
+        /* ------------------------------------------------------- */
+        //msg_pos->set_z(player->v);
+        //msg_pos->set_v(player->z);
+
+        // 抽象拉满了, z 和 v 又搞错了
+        msg_pos->set_z(player->z);
+        msg_pos->set_v(player->v);
+        /* ------------------------------------------------------- */
 
         std::cout << "(发送给自己的玩家) GameRole::CreateSrdPosition() google debug:" << std::endl;
         std::cout << msg_player->Utf8DebugString() << std::endl;

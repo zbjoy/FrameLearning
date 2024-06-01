@@ -1,4 +1,5 @@
 #pragma once
+#include <zinx.h>
 #include <ZinxTCP.h>
 
 class GameProtocol;

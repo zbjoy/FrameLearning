@@ -1,6 +1,6 @@
 #pragma once
 #include <zinx.h>
-#include <google/protobuf/message.h>
+#include "msg.pb.h"
 #include <list>
 
 class GameMsg :
