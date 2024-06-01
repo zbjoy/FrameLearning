@@ -8,6 +8,12 @@ AZinxHandler* GameChannel::GetInputNextStage(BytesMsg& _oInput)
     return m_protocol;
 }
 
+GameChannel::~GameChannel()
+{
+    ZinxKernel::Zinx_Del_Proto(*m_protocol);
+    delete m_protocol;
+}
+
 ZinxTcpData* GameConnFact::CreateTcpDataChannel(int _fd)
 {
     // std::cout << "接收到连接" << std::endl;

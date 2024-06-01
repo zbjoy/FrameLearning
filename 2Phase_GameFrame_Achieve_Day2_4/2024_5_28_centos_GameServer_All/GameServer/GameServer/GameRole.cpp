@@ -2,9 +2,11 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
+#include "RandomName.h"
 #include <random>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
+RandomName randomName;
 
 /* 随机位置 */
 std::default_random_engine random_engine(time(NULL));
@@ -14,7 +16,8 @@ bool GameRole::Init()
 {
     /* 初始化姓名和Pid */
     m_Pid = m_protocol->m_channel->GetFd();
-    m_Name = std::string("Tom") + std::to_string(m_Pid);
+    // m_Name = std::string("Tom") + std::to_string(m_Pid); 改为随机姓名
+    m_Name = randomName.GetName();
     // x = 50 + 10 * m_Pid; 改为随机位置
     // z = 50 + 10 * m_Pid;
     x = 100 + random_engine() % 50;
@@ -82,6 +85,9 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
 
 void GameRole::Fini()
 {
+    /* 释放姓名 */
+    std::cout << "释放了一个姓名: " << m_Name << std::endl;
+    randomName.ReleaseName(m_Name);
 }
 
 GameMsg* GameRole::CreateLoginIDName()

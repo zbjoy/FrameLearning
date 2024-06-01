@@ -13,6 +13,8 @@ public:
     Irole* GetMsgProcessor(UserDataMsg& _oUserDataMsg) override;
     Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
 
+    ~GameProtocol();
+
 public:
     GameChannel* m_channel;
     GameRole* m_role;

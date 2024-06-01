@@ -11,6 +11,8 @@ public:
     // 通过 ZinxTcpData 继承
     AZinxHandler* GetInputNextStage(BytesMsg& _oInput) override;
 
+    ~GameChannel();
+
 public:
     GameProtocol* m_protocol;
 };

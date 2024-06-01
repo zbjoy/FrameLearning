@@ -85,3 +85,9 @@ Ichannel* GameProtocol::GetMsgSender(BytesMsg& _oBytes)
 {
     return m_channel;
 }
+
+GameProtocol::~GameProtocol()
+{
+    ZinxKernel::Zinx_Del_Role(*m_role);
+    delete m_role;
+}
