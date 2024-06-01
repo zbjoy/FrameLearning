@@ -2,16 +2,22 @@
 #include "GameProtocol.h"
 #include "GameChannel.h"
 #include "GameMsg.h"
+#include <random>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
+
+/* 随机位置 */
+std::default_random_engine random_engine(time(NULL));
 
 bool GameRole::Init()
 {
     /* 初始化姓名和Pid */
     m_Pid = m_protocol->m_channel->GetFd();
     m_Name = std::string("Tom") + std::to_string(m_Pid);
-    x = 50 + 10 * m_Pid;
-    z = 50 + 10 * m_Pid;
+    // x = 50 + 10 * m_Pid; 改为随机位置
+    // z = 50 + 10 * m_Pid;
+    x = 100 + random_engine() % 50;
+    z = 100 + random_engine() % 50;
 
     /* 将玩家添加到世界类 */
     world.Add_Player(this);
