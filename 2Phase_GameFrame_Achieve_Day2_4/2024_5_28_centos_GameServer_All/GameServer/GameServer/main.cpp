@@ -4,6 +4,7 @@
 
 #include "RandomName.h"
 
+#include "TimeOutMng.h"
 // #include "AOIWorld.h"
 
 using namespace std;
@@ -62,6 +63,8 @@ using namespace std;
 //	}
 //}
 
+
+
 // class RandomName;
 extern RandomName randomName;
 
@@ -75,6 +78,7 @@ int main()
 	ZinxKernel::ZinxKernelInit();
 
 	ZinxKernel::Zinx_Add_Channel(*new ZinxTCPListen(8899, new GameConnFact()));
+	ZinxKernel::Zinx_Add_Channel(*new TimerChannel());
 
 	ZinxKernel::Zinx_Run();
 
