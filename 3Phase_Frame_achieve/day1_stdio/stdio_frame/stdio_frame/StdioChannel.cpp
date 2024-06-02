@@ -1,17 +1,49 @@
 #include "StdioChannel.h"
 #include <iostream>
 
-int StdioChannel::GetFd()
+void StdinChannel::Set_OutChannel(StdoutChannel* _pOut)
 {
-    return 0;
+	pOut = _pOut;
 }
 
-void StdioChannel::ReadFd()
+int StdinChannel::GetFd()
 {
-    std::cin >> content;
+	return 0;
 }
 
-void StdioChannel::WriteFd()
+std::string StdinChannel::ReadFd()
 {
-    std::cout << content << std::endl;
+	std::string temp;
+	std::cin >> temp;
+	return temp;
+}
+
+void StdinChannel::WriteFd(std::string _output)
+{
+	// std::cout << _output << std::endl;
+}
+
+void StdinChannel::data_process(std::string _input)
+{
+	// 将数据回显到标准输出 --> 调用标准输出通道对象的sendout函数
+	pOut->data_sendout(_input);
+}
+
+int StdoutChannel::GetFd()
+{
+	return 1;
+}
+
+std::string StdoutChannel::ReadFd()
+{
+	return std::string();
+}
+
+void StdoutChannel::WriteFd(std::string _output)
+{
+	std::cout << _output << std::endl;
+}
+
+void StdoutChannel::data_process(std::string _input)
+{
 }

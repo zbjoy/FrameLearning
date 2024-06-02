@@ -2,14 +2,28 @@
 #include <string>
 #include "Ichannel.h"
 
-class StdioChannel :
-    public Ichannel
+class StdoutChannel : public Ichannel
 {
-    std::string content;
 public:
-    // 通过 Ichannel 继承
-    int GetFd() override;
-    void ReadFd() override;
-    void WriteFd() override;
+	// 通过 Ichannel 继承
+	int GetFd() override;
+	std::string ReadFd() override;
+	void WriteFd(std::string _output) override;
+	void data_process(std::string _input) override;
 };
 
+class StdinChannel : public Ichannel
+{
+	StdoutChannel* pOut = nullptr;
+public:
+	void Set_OutChannel(StdoutChannel* _pOut);
+	StdoutChannel* Get_OutChannel()
+	{
+		return pOut;
+	}
+	// 通过 Ichannel 继承
+	int GetFd() override;
+	std::string ReadFd() override;
+	void WriteFd(std::string _output) override;
+	void data_process(std::string _input) override;
+};

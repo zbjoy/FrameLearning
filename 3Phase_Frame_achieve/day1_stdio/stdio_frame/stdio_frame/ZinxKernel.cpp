@@ -35,15 +35,23 @@ void ZinxKernel::run()
 			if (0 != (evts->events & EPOLLIN))
 			{
 				Ichannel* pChannel = static_cast<Ichannel*>(evts[i].data.ptr);
-				pChannel->ReadFd();
-				pChannel->WriteFd();
+				/* 读出数据 */
+				std::string retStr = pChannel->ReadFd();
+				/* 处理数据 */
+				// pChannel->WriteFd();
+				pChannel->data_process(retStr);
 			}
 
 			if (0 != (evts->events & EPOLLOUT))
 			{
-				std::cout << "--------------------" << std::endl;
+				/* 向外发送的数据 */
+				// std::cout << "--------------------" << std::endl;
 				Ichannel* pChannel = static_cast<Ichannel*>(evts[i].data.ptr);
-				pChannel->WriteFd();
+
+				pChannel->flushBuffer();
+				// pChannel->WriteFd();
+				/* 删除监听方向 */
+				Mod_Channel_DelOut(pChannel);
 			}
 		}
 	}
@@ -55,9 +63,26 @@ void ZinxKernel::Add_Channel(Ichannel* _pChannel)
 	evt.data.ptr = _pChannel;
 	evt.events = EPOLLIN;
 	epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, _pChannel->GetFd(), &evt);
+	// m_channel_list.push_back(_pChannel);
 }
 
 void ZinxKernel::Del_Channel(Ichannel* _pChannel)
 {
 	epoll_ctl(m_epoll_fd, EPOLL_CTL_DEL, _pChannel->GetFd(), NULL);
+}
+
+void ZinxKernel::Mod_Channel_AddOut(Ichannel* _pChannel)
+{
+	epoll_event evt;
+	evt.events = EPOLLIN | EPOLLOUT;
+	evt.data.ptr = _pChannel;
+	epoll_ctl(m_epoll_fd, EPOLL_CTL_MOD, _pChannel->GetFd(), &evt);
+}
+
+void ZinxKernel::Mod_Channel_DelOut(Ichannel* _pChannel)
+{
+	epoll_event evt;
+	evt.events = EPOLLIN;
+	evt.data.ptr = _pChannel;
+	epoll_ctl(m_epoll_fd, EPOLL_CTL_MOD, _pChannel->GetFd(), &evt);
 }
