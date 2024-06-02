@@ -43,7 +43,7 @@ bool FIFOChannel::Init()
     {
         flag = O_WRONLY;
     }
-    m_fd = open(fifoname.c_str(), flag);
+    m_fd = open(fifoname.c_str(), flag | O_NONBLOCK);
     if (m_fd != -1)
     {
         bRet = true;
