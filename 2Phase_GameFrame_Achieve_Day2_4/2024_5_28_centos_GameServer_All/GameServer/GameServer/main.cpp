@@ -111,21 +111,21 @@ int main()
 	// RandomName_test();
 	// Timer_test();
 	/* 初始化redis连接 */
-	redisContext* c = redisConnect("127.0.0.1", 6379);
-	if (c == NULL || c->err) {
-		if (c) {
-			printf("Error: %s\n", c->errstr);
-			// handle error
-		}
-		else {
-			printf("Can't allocate redis context\n");
-		}
-	}
+	//redisContext* c = redisConnect("127.0.0.1", 6379);
+	//if (c == NULL || c->err) {
+	//	if (c) {
+	//		printf("Error: %s\n", c->errstr);
+	//		// handle error
+	//	}
+	//	else {
+	//		printf("Can't allocate redis context\n");
+	//	}
+	//}
 
-	/* redis connect test */
-	void* reply = redisCommand(c, "lpush name tom");
-	freeReplyObject(reply);
-	cout << "已经添加tom" << endl;
+	///* redis connect test */
+	//void* reply = redisCommand(c, "lpush name tom");
+	//freeReplyObject(reply);
+	//cout << "已经添加tom" << endl;
 
 	randomName.Init();
 
@@ -138,6 +138,6 @@ int main()
 
 	ZinxKernel::ZinxKernelFini();
 
-	redisFree(c);
+	//redisFree(c);
 	return 0;
 }

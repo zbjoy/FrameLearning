@@ -43,6 +43,12 @@ bool GameRole::Init()
     /* 将玩家添加到世界类 */
     world.Add_Player(this);
 
+    /* 将玩家存入redis缓存 */
+    redisContext* c = redisConnect("127.0.0.1", 6379);
+    void* reply = redisCommand(c, "LPUSH name %s", m_Name.c_str());
+    freeReplyObject(reply);
+    redisFree(c);
+
     /* 发送上线消息 */
     ZinxKernel::Zinx_SendOut(*CreateLoginIDName(), *m_protocol); // 有什么用 ??? 
 
@@ -111,6 +117,11 @@ void GameRole::Fini()
         ZinxKernel::Zinx_SendOut(*CreateLogoffIDName(), *pRole->m_protocol);
     }
     world.Del_Player(this);
+    /* 将玩家从redis缓存删除 */
+    redisContext* c = redisConnect("127.0.0.1", 6379);
+    void* reply = redisCommand(c, "LREM name 0 %s", m_Name.c_str());
+    freeReplyObject(reply);
+    redisFree(c);
 
     /* 释放姓名 */
     std::cout << "释放了一个姓名: " << m_Name << std::endl;
