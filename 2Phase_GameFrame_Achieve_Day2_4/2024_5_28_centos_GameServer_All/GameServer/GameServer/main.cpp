@@ -63,6 +63,41 @@ using namespace std;
 //	}
 //}
 
+class SayHello : public TimeOutProc
+{
+public:
+	// 通过 TimeOutProc 继承
+	int GetTime() override
+	{
+		return 13;
+	}
+	void Proc() override
+	{
+		cout << "Hello" << endl;
+	}
+} *hello = new SayHello;
+
+class SayNo : public TimeOutProc
+{
+public:
+	// 通过 TimeOutProc 继承
+	int GetTime() override
+	{
+		return 9;
+	}
+	void Proc() override
+	{
+		cout << "No" << endl;
+	}
+} *no = new SayNo;
+
+void Timer_test()
+{
+	TimeOutMng::GetInstance()->Add_Task(hello);
+	TimeOutMng::GetInstance()->Add_Task(no);
+
+}
+
 
 
 // class RandomName;
@@ -73,6 +108,7 @@ int main()
 
 	// AOIWorld_Test();
 	// RandomName_test();
+	Timer_test();
 	randomName.Init();
 
 	ZinxKernel::ZinxKernelInit();

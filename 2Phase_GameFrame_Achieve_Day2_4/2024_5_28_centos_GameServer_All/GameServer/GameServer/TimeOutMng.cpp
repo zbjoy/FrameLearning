@@ -43,6 +43,17 @@ bool TimerChannel::ReadFd(std::string& _input)
 
     //_input.assign(buf, sizeof(buf));
     //std::cout << "((((((((((((((" << std::endl;
+
+    char buf[8] = { 0 };
+    /* 不写read的话它就会一直触发, 只有有read才会阻塞住 */
+    if (8 != read(m_timer_fd, buf, 8))
+    {
+        std::cout << "TimerChannel::ReadFd(): read != 8" << std::endl;
+        return false;
+    }
+    std::cout << "过去了1秒" << std::endl;
+
+    _input.assign(buf, sizeof(buf));
     return true;
 }
 
@@ -72,9 +83,71 @@ AZinxHandler* TimerChannel::GetInputNextStage(BytesMsg& _oInput)
     return TimeOutMng::GetInstance();
 }
 
+void TimeOutMng::Add_Task(TimeOutProc* _task)
+{
+    int timeNum = (_task->GetTime() + curIndex) % 10;
+    _task->iCount = _task->GetTime() / 10;
+
+    m_timer_wheel[timeNum].push_back(_task);
+}
+
+void TimeOutMng::Del_Task(TimeOutProc* _task)
+{
+    /* 删除时已经不知道跑到哪里去了, 只能直接遍历 */
+    for (auto single : m_timer_wheel)
+    {
+        for (auto task : single)
+        {
+            if (task == _task)
+            {
+                single.remove(task);
+            }
+        }
+    }
+}
+
 IZinxMsg* TimeOutMng::InternelHandle(IZinxMsg& _oInput)
 {
-    std::cout << "(TimeOutMng::InternelHandle)" << std::endl;
+    // std::cout << "(TimeOutMng::InternelHandle)" << std::endl;
+    /* 处理传来的时间信号 */
+    GET_REF2DATA(BytesMsg, _num, _oInput);
+    int num = atoi(_num.szData.c_str());
+
+    int num2 = 0;
+    _num.szData.copy((char*)&num2, sizeof(int), 0);
+    std::cout << "atoi(_num.szData.c_str()): " << num << std::endl;
+    std::cout << "copy from char: " << num2 << std::endl;;
+    // static int testNum = 0;
+    // std::cout << "****************(nowTime: " << testNum++ << ")****************" << std::endl;
+
+    // num2是对的
+
+	while (num2-- > 0)
+    {
+        // for (auto single : m_timer_wheel[curIndex])
+        for (auto it = m_timer_wheel[curIndex].begin(); it != m_timer_wheel[curIndex].end();)
+        {
+            if ((*it)->iCount == 0)
+            {
+                (*it)->Proc();
+                /* 不可以这么玩, 这会导致遍历不下去下面的迭代器 */
+                // Del_Task(single);
+                std::list<TimeOutProc*>::iterator temp = it;
+                it = m_timer_wheel[curIndex].erase(it);
+                // Add_Task(*it);
+
+                /* 因为it会变为下一个, 所以要提前看住 */
+                Add_Task(*temp);
+            }
+            else
+            {
+                (*it)->iCount--;
+                it++;
+            }
+        }
+        curIndex = (curIndex + 1) % 10;
+    }
+
     return nullptr;
 }
 
