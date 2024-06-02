@@ -59,6 +59,7 @@ void ZinxKernel::run()
 
 void ZinxKernel::Add_Channel(Ichannel* _pChannel)
 {
+	_pChannel->Init();
 	epoll_event evt;
 	evt.data.ptr = _pChannel;
 	evt.events = EPOLLIN;
@@ -69,6 +70,8 @@ void ZinxKernel::Add_Channel(Ichannel* _pChannel)
 void ZinxKernel::Del_Channel(Ichannel* _pChannel)
 {
 	epoll_ctl(m_epoll_fd, EPOLL_CTL_DEL, _pChannel->GetFd(), NULL);
+
+	_pChannel->Fini();
 }
 
 void ZinxKernel::Mod_Channel_AddOut(Ichannel* _pChannel)

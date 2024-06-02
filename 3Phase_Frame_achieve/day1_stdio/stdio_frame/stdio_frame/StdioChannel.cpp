@@ -29,6 +29,15 @@ void StdinChannel::data_process(std::string _input)
 	pOut->data_sendout(_input);
 }
 
+bool StdinChannel::Init()
+{
+	return true;
+}
+
+void StdinChannel::Fini()
+{
+}
+
 int StdoutChannel::GetFd()
 {
 	return 1;
@@ -45,5 +54,14 @@ void StdoutChannel::WriteFd(std::string _output)
 }
 
 void StdoutChannel::data_process(std::string _input)
+{
+}
+
+bool StdoutChannel::Init()
+{
+	return true;
+}
+
+void StdoutChannel::Fini()
 {
 }
