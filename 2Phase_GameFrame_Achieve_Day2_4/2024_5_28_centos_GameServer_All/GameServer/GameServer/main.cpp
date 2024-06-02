@@ -3,6 +3,7 @@
 #include "GameChannel.h"
 
 #include "RandomName.h"
+#include <hiredis/hiredis.h>
 
 #include "TimeOutMng.h"
 // #include "AOIWorld.h"
@@ -109,6 +110,23 @@ int main()
 	// AOIWorld_Test();
 	// RandomName_test();
 	// Timer_test();
+	/* 初始化redis连接 */
+	redisContext* c = redisConnect("127.0.0.1", 6379);
+	if (c == NULL || c->err) {
+		if (c) {
+			printf("Error: %s\n", c->errstr);
+			// handle error
+		}
+		else {
+			printf("Can't allocate redis context\n");
+		}
+	}
+
+	/* redis connect test */
+	void* reply = redisCommand(c, "lpush name tom");
+	freeReplyObject(reply);
+	cout << "已经添加tom" << endl;
+
 	randomName.Init();
 
 	ZinxKernel::ZinxKernelInit();
@@ -119,5 +137,7 @@ int main()
 	ZinxKernel::Zinx_Run();
 
 	ZinxKernel::ZinxKernelFini();
+
+	redisFree(c);
 	return 0;
 }

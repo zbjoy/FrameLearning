@@ -5,6 +5,7 @@
 #include "RandomName.h"
 #include "TimeOutMng.h"
 #include <random>
+#include <hiredis/hiredis.h>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
 RandomName randomName;
