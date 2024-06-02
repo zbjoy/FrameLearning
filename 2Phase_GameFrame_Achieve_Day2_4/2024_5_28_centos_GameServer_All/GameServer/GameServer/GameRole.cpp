@@ -3,6 +3,7 @@
 #include "GameChannel.h"
 #include "GameMsg.h"
 #include "RandomName.h"
+#include "TimeOutMng.h"
 #include <random>
 
 static AOIWorld world(0, 400, 0, 400, 20, 20);
@@ -12,8 +13,23 @@ RandomName randomName;
 std::default_random_engine random_engine(time(NULL));
 /* 随机姓名 */
 
+class ExitGame : public TimeOutProc
+{
+public:
+    // 通过 TimeOutProc 继承
+    int GetTime() override
+    {
+        return 15;
+    }
+    void Proc() override
+    {
+        ZinxKernel::Zinx_Exit();
+    }
+} *exit_game = new ExitGame;
+
 bool GameRole::Init()
 {
+    TimeOutMng::GetInstance()->Del_Task(exit_game);
     /* 初始化姓名和Pid */
     m_Pid = m_protocol->m_channel->GetFd();
     // m_Name = std::string("Tom") + std::to_string(m_Pid); 改为随机姓名
@@ -98,6 +114,12 @@ void GameRole::Fini()
     /* 释放姓名 */
     std::cout << "释放了一个姓名: " << m_Name << std::endl;
     randomName.ReleaseName(m_Name);
+
+    auto roles = ZinxKernel::Zinx_GetAllRole();
+    if (roles.size() == 0)
+    {
+        TimeOutMng::GetInstance()->Add_Task(exit_game);
+    }
 }
 
 GameMsg* GameRole::CreateLoginIDName()

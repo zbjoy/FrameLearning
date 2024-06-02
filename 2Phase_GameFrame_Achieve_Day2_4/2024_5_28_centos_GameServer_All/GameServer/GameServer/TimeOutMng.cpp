@@ -51,7 +51,7 @@ bool TimerChannel::ReadFd(std::string& _input)
         std::cout << "TimerChannel::ReadFd(): read != 8" << std::endl;
         return false;
     }
-    std::cout << "过去了1秒" << std::endl;
+    // std::cout << "过去了1秒" << std::endl;
 
     _input.assign(buf, sizeof(buf));
     return true;
@@ -115,8 +115,8 @@ IZinxMsg* TimeOutMng::InternelHandle(IZinxMsg& _oInput)
 
     int num2 = 0;
     _num.szData.copy((char*)&num2, sizeof(int), 0);
-    std::cout << "atoi(_num.szData.c_str()): " << num << std::endl;
-    std::cout << "copy from char: " << num2 << std::endl;;
+    // std::cout << "atoi(_num.szData.c_str()): " << num << std::endl;
+    // std::cout << "copy from char: " << num2 << std::endl;;
     // static int testNum = 0;
     // std::cout << "****************(nowTime: " << testNum++ << ")****************" << std::endl;
 

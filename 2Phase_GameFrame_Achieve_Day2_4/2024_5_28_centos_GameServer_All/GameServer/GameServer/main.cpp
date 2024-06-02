@@ -108,7 +108,7 @@ int main()
 
 	// AOIWorld_Test();
 	// RandomName_test();
-	Timer_test();
+	// Timer_test();
 	randomName.Init();
 
 	ZinxKernel::ZinxKernelInit();
