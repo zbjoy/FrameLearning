@@ -21,7 +21,7 @@ std::string FIFOChannel::ReadFd(std::string _input)
             std::cout << "管道没打开, 读不进来东西" << std::endl;
         }
     }
-    std::cout << "有东西读入" << std::endl;
+    // std::cout << "有东西读入" << std::endl;
     char buf[1024] = { 0 };
     int num = read(m_fd, buf, 1024);
 
@@ -55,7 +55,7 @@ void FIFOChannel::WriteFd(std::string _output)
         }
     }
 
-    std::cout << "写管道尝试写进去东西" << std::endl;
+    // std::cout << "写管道尝试写进去东西" << std::endl;
     write(m_fd, _output.c_str(), _output.size());
 }
 
