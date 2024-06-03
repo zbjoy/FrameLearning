@@ -32,7 +32,9 @@ void StdinChannel::data_process(std::string _input)
 {
 	// 将数据回显到标准输出 --> 调用标准输出通道对象的sendout函数
 	// pOut->data_sendout(_input);
-	pOut->handle(_input);
+	// pOut->handle(_input);
+	
+	// pOut->Handler();
 }
 
 bool StdinChannel::Init()

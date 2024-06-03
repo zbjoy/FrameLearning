@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include "Ichannel.h"
+#include "IMessage.h"
 
 class IZinxHandler
 {
@@ -11,22 +12,10 @@ public:
 	IZinxHandler() {};
 	~IZinxHandler() {};
 
-	void handle(std::string _input)
-	{
-		std::string output = Upper(_input);
-		pNext->data_sendout(output);
-	}
+	void Handler(IMessage* _input);
 
-	std::string Upper(std::string _input)
-	{
-		
-		if (_input[0] <= 'z' && _input[0] >= 'a')
-		{
-			std::transform(_input.begin(), _input.end(), _input.begin(), ::toupper);
-		}
-		return _input;
-	}
-
+	virtual IMessage* data_handle(IMessage* _input) = 0;
+	virtual IZinxHandler* get_next() = 0;
 
 };
 
