@@ -21,5 +21,9 @@ public:
 
 private:
     Ichannel* pOut;
+
+    // 通过 Ichannel 继承
+    bool Init() override;
+    void Fini() override;
 };
 

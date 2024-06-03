@@ -21,3 +21,12 @@ void StdoutChannel::WriteFd(std::string _output)
 void StdoutChannel::data_process(std::string _output)
 {
 }
+
+bool StdoutChannel::Init()
+{
+    return true;
+}
+
+void StdoutChannel::Fini()
+{
+}

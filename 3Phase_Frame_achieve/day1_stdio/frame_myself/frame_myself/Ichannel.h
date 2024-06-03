@@ -5,6 +5,8 @@
 class Ichannel
 {
 public:
+	virtual bool Init() = 0;
+	virtual void Fini() = 0;
 	virtual int GetFd() = 0;
 	virtual std::string ReadFd(std::string _input) = 0;
 	virtual void WriteFd(std::string _output) = 0;

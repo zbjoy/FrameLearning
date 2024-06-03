@@ -24,3 +24,12 @@ void StdinChannel::data_process(std::string _output)
 {
     pOut->data_sendout(_output);
 }
+
+bool StdinChannel::Init()
+{
+    return true;
+}
+
+void StdinChannel::Fini()
+{
+}

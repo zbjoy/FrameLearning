@@ -8,15 +8,19 @@
 
 void ZinxKernel::Zinx_Add_Channel(Ichannel* _pChannel)
 {
-	epoll_event evt;
-	evt.data.ptr = _pChannel;
-	evt.events = EPOLLIN;
-	epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, _pChannel->GetFd(), &evt);
+	if (_pChannel->Init())
+	{
+		epoll_event evt;
+		evt.data.ptr = _pChannel;
+		evt.events = EPOLLIN;
+		epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, _pChannel->GetFd(), &evt);
+	}
 }
 
 void ZinxKernel::Zinx_Del_Channel(Ichannel* _pChannel)
 {
 	epoll_ctl(m_epoll_fd, EPOLL_CTL_DEL, _pChannel->GetFd(), NULL);
+	_pChannel->Fini();
 }
 
 void ZinxKernel::ZinxKernel_Run()
