@@ -104,6 +104,7 @@ void Timer_test()
 // class RandomName;
 extern RandomName randomName;
 
+void daemon_init();
 int main()
 {
 
@@ -126,6 +127,7 @@ int main()
 	//void* reply = redisCommand(c, "lpush name tom");
 	//freeReplyObject(reply);
 	//cout << "已经添加tom" << endl;
+	daemon_init();
 
 	randomName.Init();
 
@@ -140,4 +142,57 @@ int main()
 
 	//redisFree(c);
 	return 0;
+}
+
+void daemon_init()
+{
+	pid_t pid;
+	int i;
+
+	pid = fork();
+	if (pid < 0)
+	{
+		cout << "Error Fork" << endl;
+		exit(1);
+	}
+	else if (pid > 0)
+	{
+		// 父进程
+		exit(0);
+	}
+
+	pid = setsid();
+	
+	int nil = open("/dev/null", O_RDWR);
+	dup2(nil, STDIN_FILENO);
+	dup2(nil, STDOUT_FILENO);
+	dup2(nil, STDERR_FILENO);
+	close(nil);
+
+	while (true)
+	{
+		int pid2 = fork();
+
+		if (pid2 < 0)
+		{
+			exit(1);
+		}
+
+		if (pid2 > 0)
+		{
+			// 父进程等待
+			int status;
+			wait(&status);
+
+			if (status == 0)
+			{
+				exit(0);
+			}
+		}
+		else
+		{
+			break;
+		}
+	}
+
 }
