@@ -10,3 +10,6 @@
 *.log
 *.sln
 *.out
+.\4Phase_Learn_Arrange\launcger_qt_2\launcher\mainwindow.cpp
+.\4Phase_Learn_Arrange\launcger_qt\launcher\mainwindow.cpp
+
